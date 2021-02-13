@@ -1,0 +1,139 @@
+{
+	"main": {
+		"year": "2021",
+		"name": "James Wilson",
+		"occupation": "Software Testing & TV Production",
+		"description": "Here will be your description. Use this to describe what you do or whatever you feel best describes yourself to a potential employer",
+		"image": "profilepic.jpg",
+		"bio": "Use this bio section as your way of describing yourself and saying what you do, what technologies you like to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing in.",
+		"contactmessage": "Here is where you should write your message to readers to have them get in contact with you.",
+		"email": "james@jmew.ca",
+		"address": {
+			"province": "Ontario",
+			"country": "Canada"
+		},
+		"website": "https://www.jmew.ca",
+		"resumedownload": "http://timbakerdev.com",
+		"social": [
+			{
+				"name": "twitter",
+				"url": "https://twitter.com/jmew24",
+				"className": "fa fa-twitter"
+			},
+			{
+				"name": "linkedin",
+				"url": "https://www.linkedin.com/in/james-wilson-a8945334/",
+				"className": "fa fa-linkedin"
+			},
+			{
+				"name": "instagram",
+				"url": "https://instagram.com/jmew24",
+				"className": "fa fa-instagram"
+			},
+			{
+				"name": "github",
+				"url": "https://github.com/jmew24",
+				"className": "fa fa-github"
+			}
+		]
+	},
+	"resume": {
+		"productionSkillmessage": "Here you can create a short write-up of your skills to show off to employers",
+		"codingSkillmessage": "Here you can create a short write-up of your skills to show off to employers",
+		"education": [
+			{
+				"school": "Niagara College",
+				"degree": " Broadcasting – Radio, Television and Film (Television Production)",
+				"graduated": "April 2021",
+				"description": "Describe your experience at school, what you learned, what useful skills you have acquired etc."
+			},
+			{
+				"school": "School #1 Maybe College?",
+				"degree": "Video Game Design and Development",
+				"graduated": "March 2003",
+				"description": "Describe your experience at school, what you learned, what useful skills you have acquired etc."
+			}
+		],
+		"work": [
+			{
+				"company": "Awesome Design Studio",
+				"title": "Senior UX God ",
+				"years": "March 2010 - Present",
+				"description": "Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
+			},
+			{
+				"company": "Super Cool Studio",
+				"title": "Junior bug fixer",
+				"years": "March 2007 - February 2010",
+				"description": "Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
+			}
+		],
+		"skills": {
+			"production": [
+				{
+					"name": "Avid Media Composer",
+					"level": "45%"
+				},
+				{
+					"name": "Pro Tools",
+					"level": "45%"
+				},
+				{
+					"name": "Adobe Audition",
+					"level": "50%"
+				},
+				{
+					"name": "Final Cut Pro",
+					"level": "55%"
+				},
+				{
+					"name": "Adobe Premiere Pro",
+					"level": "75%"
+				}
+			],
+			"coding": [
+				{
+					"name": "Python",
+					"level": "50%"
+				},
+				{
+					"name": "C#",
+					"level": "60%"
+				},
+				{
+					"name": "ReactJs",
+					"level": "80%"
+				},
+				{
+					"name": "NodeJS",
+					"level": "86%"
+				}
+			]
+		}
+	},
+	"portfolio": {
+		"projects": {
+			"production": [],
+			"coding": [
+				{
+					"title": "HyperDeck UI",
+					"category": "A Python based controller for the Blackmagic Design HyperDeck",
+					"image": "hyperdeck-controller.jpg",
+					"url": "https://github.com/jmew24/blackmagic-hyperdeck-ui"
+				},
+				{
+					"title": "Convocation Controller",
+					"category": "A React based Xpression controller for convocation ceremony name readings",
+					"image": "convocation-controller.jpg",
+					"url": "https://github.com/ReadySetLinq/convocation-controller/tree/dev"
+				},
+				{
+					"title": "Resume Website",
+					"category": "A React based resume website template",
+					"image": "resume-website.jpg",
+					"url": "https://github.com/jmew24/react-portfolio"
+				}
+			]
+		}
+	}
+}
