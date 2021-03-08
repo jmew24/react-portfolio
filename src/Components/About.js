@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = ({ data }) => {
 	return (
-		<section id='about'>
+		<section className='about' id='about'>
 			<div className='row'>
 				<div className='three columns'>
 					<img className='profile-pic' src={`images/${data.image}`} alt='Profile Pic' />
@@ -16,7 +16,8 @@ const About = ({ data }) => {
 							<h2>Contact Details</h2>
 							<p className='address'>
 								<span>
-									Location: {data.address.province}, {data.address.country}
+									Location: {data.address.region ? `${data.address.region} Region - ` : ''} {data.address.province},{' '}
+									{data.address.country}
 								</span>
 								<br />
 								<span>
@@ -27,7 +28,7 @@ const About = ({ data }) => {
 						<div className='columns download'>
 							<p>
 								<a href={data.resumeDownload} className='button'>
-									<i className='fa fa-download'></i>Download Resume
+									<i className='fa fa-download'></i>Download Experience
 								</a>
 							</p>
 						</div>

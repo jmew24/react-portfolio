@@ -25,24 +25,34 @@ const Header = ({ data }) => {
 					Hide navigation
 				</a>
 
-				<ul id='nav' className='nav'>
-					<li className='current'>
+				<ul id='nav' className='nav-list'>
+					<li className='nav-list-item current'>
 						<a className='smoothscroll' href='#home'>
 							Home
 						</a>
 					</li>
-					<li>
+					<li className='nav-list-item'>
 						<a className='smoothscroll' href='#about'>
 							About
 						</a>
 					</li>
-					<li>
-						<a className='smoothscroll' href='#resume'>
-							Resume
+					<li className='nav-list-item'>
+						<a className='smoothscroll' href='#experience'>
+							Experience
 						</a>
 					</li>
-					<li>
-						<a className='smoothscroll' href='#portfolio'>
+					<li className='nav-list-item'>
+						<a className='smoothscroll' href='#skills'>
+							Skills
+						</a>
+					</li>
+					<li className='nav-list-item'>
+						<a className='smoothscroll' href='#education'>
+							Education
+						</a>
+					</li>
+					<li className='nav-list-item'>
+						<a className='smoothscroll' href='#works'>
 							Works
 						</a>
 					</li>
