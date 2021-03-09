@@ -1,30 +1,30 @@
 import React, { useMemo } from 'react';
+import ImageGallery from 'react-image-gallery';
 
 const Portfolio = ({ data }) => {
 	const productionProjects = useMemo(
 		() =>
 			data.production.map((projects) => {
-				const projectImage = `images/portfolio/production/${projects.image}`;
+				const prefixUrl = 'images/portfolio/gallery/production/';
+				const images = projects.images.map((image) => {
+					return image.url
+						? Object.assign(
+								{},
+								{
+									thumbnail: `${prefixUrl}${image.file}.png`,
+									original: `${prefixUrl}${image.file}.png`,
+									description: image.description ? image.description : '',
+								},
+						  )
+						: null;
+				});
 				return (
 					<div
 						key={projects.title.replace(' ', '-').toLowerCase()}
 						className='columns works-item'
 						id={`works-production-${projects.title.replace(' ', '-').toLowerCase()}`}
 					>
-						<div className='item-wrap'>
-							<a rel='noreferrer' href={projects.url} title={projects.title} target='_blank'>
-								<img alt={projects.title} src={projectImage} />
-								<div className='overlay'>
-									<div className='works-item-meta'>
-										<h5>{projects.title}</h5>
-										<p>{projects.description}</p>
-									</div>
-								</div>
-								<div className='link-icon'>
-									<i className='fa fa-link'></i>
-								</div>
-							</a>
-						</div>
+						<ImageGallery items={images} />
 					</div>
 				);
 			}),
