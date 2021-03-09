@@ -1,42 +1,51 @@
-import React from 'react';
+import React from "react";
 
-const About = ({ data }) => {
-	return (
-		<section className='about' id='about'>
-			<div className='row'>
-				<div className='three columns'>
-					<img className='profile-pic' src={`images/${data.image}`} alt='Profile Pic' />
-				</div>
-				<div className='nine columns main-col'>
-					<h2>About Me</h2>
+import { Main } from "../Data/resume";
 
-					<p>{data.bio}</p>
-					<div className='row'>
-						<div className='columns contact-details'>
-							<h2>Contact Details</h2>
-							<p className='address'>
-								<span>
-									Location: {data.address.region ? `${data.address.region} Region - ` : ''} {data.address.province},{' '}
-									{data.address.country}
-								</span>
-								<br />
-								<span>
-									<a href={`mailto:${data.email}`}>{data.email}</a>
-								</span>
-							</p>
-						</div>
-						<div className='columns download'>
-							<p>
-								<a href={data.resumeDownload} className='button'>
-									<i className='fa fa-download'></i>Download Experience
-								</a>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	);
+const aboutPage = () => {
+  return (
+    <section className="about" id="about">
+      <div className="row">
+        <div className="three columns">
+          <img
+            className="profile-pic"
+            src={`images/${Main.image}`}
+            alt="Profile Pic"
+          />
+        </div>
+        <div className="nine columns main-col">
+          <h2>About Me</h2>
+
+          <p>{Main.bio}</p>
+          <div className="row">
+            <div className="columns contact-details">
+              <h2>Contact Details</h2>
+              <p className="address">
+                <span>
+                  Location:{" "}
+                  {Main.address.region
+                    ? `${Main.address.region} Region - `
+                    : ""}{" "}
+                  {Main.address.province}, {Main.address.country}
+                </span>
+                <br />
+                <span>
+                  <a href={`mailto:${Main.email}`}>{Main.email}</a>
+                </span>
+              </p>
+            </div>
+            <div className="columns download">
+              <p>
+                <a href={Main.resumeDownload} className="button">
+                  <i className="fa fa-download"></i>Download Experience
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
-export default About;
+export default aboutPage;
