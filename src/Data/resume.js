@@ -155,7 +155,7 @@ export const Works = {
 		},
 		{
 			id: 'spring-fall-convocation',
-			title: 'Spring & Fall Convocation 2020',
+			title: 'Convocation 2020',
 			images: [
 				{
 					file: 'control_room.jpg',

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useMemo, useEffect } from 'react';
 
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
@@ -13,6 +13,25 @@ const LightBox = (props) => {
 	});
 	const curImage = state.images[state.photoIndex];
 	let _isMounted = useRef(false);
+	let _urlId = useRef('');
+
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	const handlePopState = () => {
+		if (!state.isOpen) {
+			if (_urlId.current === '') {
+				const curUrlId = window.location.toString().split('#')[1];
+				if (curUrlId === `${state.source}-${state.id}`) {
+					_urlId.current = curUrlId;
+					setState((prevState) => ({
+						...prevState,
+						isOpen: true,
+					}));
+				}
+			} else {
+				_urlId.current = '';
+			}
+		}
+	};
 
 	useEffect(() => {
 		_isMounted.current = true;
@@ -20,7 +39,16 @@ const LightBox = (props) => {
 		return () => {
 			_isMounted.current = false;
 		};
-	});
+	}, []);
+
+	useEffect(() => {
+		window.addEventListener('popstate', handlePopState);
+		handlePopState();
+
+		return () => {
+			window.removeEventListener('popstate', handlePopState);
+		};
+	}, [handlePopState]);
 
 	return (
 		<div
