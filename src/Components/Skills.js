@@ -1,73 +1,62 @@
-import React, { useMemo } from "react";
+import React, { useMemo } from 'react';
 
-import { Skills } from "../Data/resume";
+import { Skills } from '../Data/resume';
 
-const page = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const productionSkills = useMemo(
-    () =>
-      Skills.production.map((production) => {
-        const className = "bar-expand " + production.name.toLowerCase();
-        return (
-          <li
-            key={`${production.name}-${production.level
-              .toString()
-              .replace("%", "")}`}
-            id={`skill-production-${production.name}`}
-          >
-            <span
-              style={{ width: production.level }}
-              className={className}
-            ></span>
-            <em>{production.name}</em>
-          </li>
-        );
-      }),
-    []
-  );
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const codingSkills = useMemo(
-    () =>
-      Skills.coding.map((coding) => {
-        const className = "bar-expand " + coding.name.toLowerCase();
-        return (
-          <li
-            key={`${coding.name}-${coding.level.toString().replace("%", "")}`}
-            id={`skill-coding-${coding.name}`}
-          >
-            <span style={{ width: coding.level }} className={className}></span>
-            <em>{coding.name}</em>
-          </li>
-        );
-      }),
-    []
-  );
+const SkillsPage = () => {
+	const productionSkills = useMemo(
+		() =>
+			Skills.production.list.map((skill, index) => {
+				return (
+					<em key={`${skill}`} id={`skill-production-${skill}`}>
+						{index > 0 ? <span>&bull;</span> : null} <span>{skill}</span>{' '}
+					</em>
+				);
+			}),
+		[],
+	);
 
-  return (
-    <section id="skills">
-      <div className="row skill">
-        <div className="three columns header-col">
-          <h1>
-            <span>Skills</span>
-          </h1>
-        </div>
+	const codingSkills = useMemo(
+		() =>
+			Skills.coding.list.map((skill, index) => {
+				return (
+					<em key={`${skill}`} id={`skill-production-${skill}`}>
+						{index > 0 ? <span>&bull;</span> : null} <span>{skill}</span>{' '}
+					</em>
+				);
+			}),
+		[],
+	);
 
-        <div className="nine columns main-col">
-          <p>{Skills.productionSkillmessage}</p>
+	return (
+		<section id='skills'>
+			<div className='row skill'>
+				<div className='four columns header-col'>
+					<h1>
+						<span>{Skills.production.title}</span>
+					</h1>
+				</div>
 
-          <div className="bars">
-            <ul className="skills">{productionSkills}</ul>
-          </div>
+				<div className='eight columns main-col'>
+					<div className='row skill'>
+						<p className='skills'>{productionSkills}</p>
+					</div>
+				</div>
 
-          <p>{Skills.codingSkillmessage}</p>
+				<div className='four columns header-col'>
+					<h1>
+						<span>{Skills.coding.title}</span>
+					</h1>
+				</div>
 
-          <div className="bars">
-            <ul className="skills">{codingSkills}</ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+				<div className='eight columns main-col'>
+					<div className='row item'>
+						<p className='skills'>{codingSkills}</p>
+					</div>
+				</div>
+			</div>
+			<br />
+		</section>
+	);
 };
 
-export default page;
+export default SkillsPage;

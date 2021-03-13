@@ -64,6 +64,7 @@ header .banner-text h1 {
 	letter-spacing: -2px;
 	margin: 0 auto 18px auto;
 	text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0.8);
 }
 header .banner-text h3 {
 	font: 18px/1.9em 'librebaskerville-regular', serif;
@@ -71,6 +72,7 @@ header .banner-text h3 {
 	margin: 0 auto;
 	width: 70%;
 	text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+	-webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.5);
 }
 header .banner-text h3 span,
 header .banner-text h3 a {
@@ -89,6 +91,7 @@ header .social {
 	padding: 0;
 	font-size: 30px;
 	text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0.8);
 }
 header .social li {
 	display: inline-block;
@@ -182,6 +185,9 @@ nav > a.mobile-btn {
 	text-decoration: none;
 	text-align: left;
 	color: #fff;
+
+	text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+	-webkit-text-stroke: 0.2px rgba(0, 0, 0, 0.5);
 
 	-webkit-transition: color 0.2s ease-in-out;
 	-moz-transition: color 0.2s ease-in-out;
@@ -316,137 +322,6 @@ nav > a.mobile-btn {
 	margin-top: 6px;
 }
 
-/*----------------------------------------------*/
-/*	Skill Bars
-/*----------------------------------------------*/
-
-.bars {
-	width: 95%;
-	float: left;
-	padding: 0;
-	text-align: left;
-}
-.bars .skills {
-	margin-top: 36px;
-	list-style: none;
-}
-.bars li {
-	position: relative;
-	margin-bottom: 60px;
-	background: #ccc;
-	height: 42px;
-	border-radius: 3px;
-}
-.bars li em {
-	font: 15px 'opensans-bold', sans-serif;
-	color: #313131;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-weight: normal;
-	position: relative;
-	top: -36px;
-}
-.bar-expand {
-	position: absolute;
-	left: 0;
-	top: 0;
-
-	margin: 0;
-	padding-right: 24px;
-	background: #313131;
-	display: inline-block;
-	height: 42px;
-	line-height: 42px;
-	border-radius: 3px 0 0 3px;
-}
-/*
-.git {
-  	-moz-animation: git 2s ease;
-  	-webkit-animation: git 2s ease;
-}
-.illustrator {
-  	-moz-animation: illustrator 2s ease;
-  	-webkit-animation: illustrator 2s ease;
-}
-.reactjs {
-  	-moz-animation: reactjs 2s ease;
-  	-webkit-animation: reactjs 2s ease;
-}
-.css {
-  	-moz-animation: css 2s ease;
-  	-webkit-animation: css 2s ease;
-}
-.html5 {
-  	-moz-animation: html5 2s ease;
-  	-webkit-animation: html5 2s ease;
-}
-.vuejs {
-  	-moz-animation: vuejs 2s ease;
-  	-webkit-animation: vuejs 2s ease;
-}
-.mongodb {
-  	-moz-animation: mongodb 2s ease;
-  	-webkit-animation: mongodb 2s ease;
-}
-
-@-moz-keyframes git {
-  0%   { width: 0px;  }
-  100% { width: 60%;  }
-}
-@-moz-keyframes illustrator {
-  0%   { width: 0px;  }
-  100% { width: 55%;  }
-}
-@-moz-keyframes reactjs {
-  0%   { width: 0px;  }
-  100% { width: 50%;  }
-}
-@-moz-keyframes css {
-  0%   { width: 0px;  }
-  100% { width: 90%;  }
-}
-@-moz-keyframes html5 {
-  0%   { width: 0px;  }
-  100% { width: 80%;  }
-}
-@-moz-keyframes vuejs {
-  0%   { width: 0px;  }
-  100% { width: 50%;  }
-}
-@-moz-keyframes mongodb {
-  0%   { width: 0px;  }
-  100% { width: 80%;  }
-}
-
-@-webkit-keyframes photoshop {
-  0%   { width: 0px;  }
-  100% { width: 60%;  }
-}
-@-webkit-keyframes illustrator {
-  0%   { width: 0px;  }
-  100% { width: 55%;  }
-}
-@-webkit-keyframes reactjs {
-  0%   { width: 0px;  }
-  100% { width: 50%;  }
-}
-@-webkit-keyframes css {
-  0%   { width: 0px;  }
-  100% { width: 90%;  }
-}
-@-webkit-keyframes html5 {
-  0%   { width: 0px;  }
-  100% { width: 80%;  }
-}
-@-webkit-keyframes vuejs {
-  0%   { width: 0px;  }
-  100% { width: 50%;  }
-}
-@-webkit-keyframes mongodb {
-  0%   { width: 0px;  }
-  100% { width: 80%;  }
-}  */
-
 /* ------------------------------------------------------------------ */
 /* e. Works Section
 /* ------------------------------------------------------------------ */
@@ -493,8 +368,8 @@ nav > a.mobile-btn {
 	width: 100%;
 	height: 100%;
 
-	opacity: 0;
-	-moz-opacity: 0;
+	opacity: 0.75;
+	-moz-opacity: 0.75;
 	filter: alpha(opacity=0);
 
 	-webkit-transition: opacity 0.3s ease-in-out;
@@ -537,10 +412,14 @@ nav > a.mobile-btn {
 .works-item .works-item-meta h5 {
 	font: 14px/21px 'opensans-bold', sans-serif;
 	color: #fff;
+	text-shadow: 0px 1px 3px #000;
+	-webkit-text-stroke: 0.5px #fff;
 }
 .works-item .works-item-meta p {
 	font: 12px/18px 'opensans-light', sans-serif;
 	color: #e6e6e6;
+	text-shadow: 0px 0.5px 2px #060606;
+	-webkit-text-stroke: 0.5px #e6e6e6;
 	margin-bottom: 0;
 }
 
