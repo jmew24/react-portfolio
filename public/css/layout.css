@@ -423,6 +423,31 @@ nav > a.mobile-btn {
 	margin-bottom: 0;
 }
 
+/* experience */
+.experience-item {
+	margin-bottom: 15px;
+}
+
+/* roles */
+.roles {
+	margin-bottom: 15px;
+}
+
+.role {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.role-title {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/* skills */
+.skill-item {
+	font-style: italic;
+}
+
 /* on hover */
 .works-item:hover .overlay {
 	opacity: 1;

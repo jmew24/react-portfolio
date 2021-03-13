@@ -32,7 +32,7 @@ const SkillsPage = () => {
 			Skills.coding.languages.list.map((language, index) => {
 				return (
 					<em key={`${language}`} id={`languages-production-${language}`}>
-						{index > 0 ? <span>&bull;</span> : null} <span>{language}</span>{' '}
+						{index > 0 ? <span>&bull;</span> : null} <span dangerouslySetInnerHTML={{ __html: language }}></span>{' '}
 					</em>
 				);
 			}),
