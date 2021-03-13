@@ -59,7 +59,7 @@ const WorksPage = () => {
 	);
 
 	return productionProjects.length > 0 || productionProjects.length > 0 ? (
-		<section className='works' id='works'>
+		<section className='works'>
 			<div className='row'>
 				<div className='twelve columns collapsed'>
 					<h1>Check Out Some of My Works.</h1>

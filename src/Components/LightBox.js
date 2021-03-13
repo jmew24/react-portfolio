@@ -13,22 +13,22 @@ const LightBox = (props) => {
 	});
 	const curImage = state.images[state.photoIndex];
 	let _isMounted = useRef(false);
-	let _urlId = useRef('');
+	let _curId = useRef('');
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
-	const handlePopState = () => {
+	const handleIdChange = (event) => {
 		if (!state.isOpen) {
-			if (_urlId.current === '') {
-				const curUrlId = window.location.toString().split('#')[1];
-				if (curUrlId === `${state.source}-${state.id}`) {
-					_urlId.current = curUrlId;
+			if (_curId.current === '') {
+				const curId = event.detail.id();
+				if (curId === `${state.source}-${state.id}`) {
+					_curId.current = curId;
 					setState((prevState) => ({
 						...prevState,
 						isOpen: true,
 					}));
 				}
 			} else {
-				_urlId.current = '';
+				_curId.current = '';
 			}
 		}
 	};
@@ -42,13 +42,12 @@ const LightBox = (props) => {
 	}, []);
 
 	useEffect(() => {
-		window.addEventListener('popstate', handlePopState);
-		handlePopState();
+		window.addEventListener('id_change', handleIdChange);
 
 		return () => {
-			window.removeEventListener('popstate', handlePopState);
+			window.removeEventListener('id_change', handleIdChange);
 		};
-	}, [handlePopState]);
+	}, [handleIdChange]);
 
 	return (
 		<div

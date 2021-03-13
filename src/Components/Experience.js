@@ -10,7 +10,12 @@ const ExperiencePage = () => {
 					Works?.production.find((o) => o.id === experience.id)?.images.length > 0 ? (
 						<span>
 							<br />
-							<a rel='noreferrer' href={`#works-production-${experience.id}`} title={experience.id}>
+							<a
+								rel='noreferrer'
+								className='smoothscroll'
+								href={`#works-production-${experience.id}`}
+								title={experience.id}
+							>
 								{' '}
 								[Goto {experience.displayTitle} Images]
 							</a>

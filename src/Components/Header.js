@@ -53,11 +53,6 @@ const HeaderPage = () => {
 							Education
 						</a>
 					</li>
-					<li className='nav-list-item'>
-						<a className='smoothscroll' href='#works'>
-							Works
-						</a>
-					</li>
 				</ul>
 			</nav>
 
