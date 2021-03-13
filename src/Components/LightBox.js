@@ -49,6 +49,12 @@ const LightBox = (props) => {
 		};
 	}, [handleIdChange]);
 
+	useEffect(() => {
+		if (!_isMounted.current) return;
+
+		if (!state.isOpen) _curId.current = '';
+	}, [state.isOpen]);
+
 	return (
 		<div
 			className='item-wrap clickable'
