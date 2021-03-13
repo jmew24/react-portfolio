@@ -91,7 +91,15 @@ export const Skills = {
 		],
 		languages: {
 			title: 'Programming Languages',
-			list: ['NodeJS', 'ReactJS', 'GraphQL', 'NestJS', 'Python', 'C#', 'MySQL'],
+			list: [
+				'<a rel="noopener noreferrer" href="https://nodejs.org/en/" target="_blank">NodeJS</a>',
+				'<a rel="noopener noreferrer" href="https://reactjs.org/" target="_blank">ReactJS</a>',
+				'<a rel="noopener noreferrer" href="https://graphql.org/" target="_blank">GraphQL</a>',
+				'<a rel="noopener noreferrer" href="https://nestjs.com/" target="_blank">NestJS</a>',
+				'<a rel="noopener noreferrer" href="https://www.python.org/" target="_blank">Python</a>',
+				'<a rel="noopener noreferrer" href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank">C#</a>',
+				'<a rel="noopener noreferrer" href="https://www.mysql.com/" target="_blank">MySQL</a>',
+			],
 		},
 	},
 };
@@ -102,7 +110,7 @@ export const Experience = {
 			id: '2020-summer-games',
 			displayTitle: 'Canadian Olympic Wrestling Trials',
 			title:
-				"<a href='https://www.niagaracollege.ca/insidenc/2019/12/02/brtf-students-undertake-filming-of-olympic-wrestling-trials/' target='_blank'>Canadian Olympic Wrestling Trials</a>",
+				'<a rel="noopener noreferrer" href="https://www.niagaracollege.ca/insidenc/2019/12/02/brtf-students-undertake-filming-of-olympic-wrestling-trials/" target="_blank">Canadian Olympic Wrestling Trials</a>',
 			subtitle: '2020 Summer Games',
 			when: 'December 5-7th 2019',
 			roles: [
@@ -121,7 +129,7 @@ export const Experience = {
 			id: 'spring-fall-convocation',
 			displayTitle: 'Niagara College Convocation',
 			title:
-				"<a href='https://www.niagaracollege.ca/virtualconvocation/' target='_blank'>Niagara College Convocation</a>",
+				'<a rel="noopener noreferrer" href="https://www.niagaracollege.ca/virtualconvocation/" target="_blank">Niagara College Convocation</a>',
 			subtitle: 'Spring & Fall Ceremonies',
 			when: 'June & October 2020',
 			roles: [
@@ -132,7 +140,7 @@ export const Experience = {
 				{
 					title: 'Name Readings',
 					description:
-						'<a href="https://github.com/ReadySetLinq/convocation-controller/tree/dev" target="_blank">created a program</a> to display students’ names by academic course which was used to record voice-over name readings for over 10,000 graduates',
+						'<a rel="noopener noreferrer" href="https://github.com/ReadySetLinq/convocation-controller/tree/dev" target="_blank">created a program</a> to display students’ names by academic course which was used to record voice-over name readings for over 10,000 graduates',
 				},
 				{
 					title: 'Pre-Production',
@@ -178,7 +186,7 @@ export const Experience = {
 			id: 'virtual-niagara-day',
 			displayTitle: 'Virtual Niagara Day 2020',
 			title:
-				"<a href='https://www.niagaracollege.ca/insidenc/2020/10/23/niagara-day-what-to-expect-and-how-to-access-the-oct-28-remote-celebration/ target='_blank'>Virtual Niagara Day 2020</a>",
+				'<a rel="noopener noreferrer" href="https://www.niagaracollege.ca/insidenc/2020/10/23/niagara-day-what-to-expect-and-how-to-access-the-oct-28-remote-celebration/ target="_blank">Virtual Niagara Day 2020</a>',
 			subtitle: 'Niagara College ',
 			when: 'October 28, 2020',
 			roles: [
@@ -193,7 +201,7 @@ export const Experience = {
 			id: 'music-niagara-festival',
 			displayTitle: 'Music Niagara Festival 2020',
 			title:
-				"<a href='https://www.musicniagara.org/concerts/steve-mcdade/ target='_blank'>Music Niagara Festival 2020</a>",
+				'<a rel="noopener noreferrer" href="https://www.musicniagara.org/concerts/steve-mcdade/ target="_blank">Music Niagara Festival 2020</a>',
 			subtitle: 'Steve McDade',
 			when: 'October 2020',
 			roles: [
@@ -218,7 +226,7 @@ export const Experience = {
 			when: 'November 2020-Present',
 			roles: [],
 			description:
-				'Created frontend solutions for administration and user management tools using <a href="https://reactjs.org/" target="_blank">ReactJS</a> and <a href="https://marmelab.com/react-admin/" target="_blank">ReactAdmin</a>. Worked on the backend to write secure <a href="https://graphql.org/" target="_blank">GraphQL</a> queries and mutations for managing user accounts using <a href="https://nestjs.com/" target="_blank">nestjs</a>.',
+				'Created frontend solutions for administration and user management tools using <a rel="noopener noreferrer" href="https://reactjs.org/" target="_blank">ReactJS</a> and <a rel="noopener noreferrer" href="https://marmelab.com/react-admin/" target="_blank">ReactAdmin</a>. Worked on the backend to write secure <a rel="noopener noreferrer" href="https://graphql.org/" target="_blank">GraphQL</a> queries and mutations for managing user accounts using <a rel="noopener noreferrer" href="https://nestjs.com/" target="_blank">nestjs</a>.',
 		},
 		{
 			id: 'hitbox-entertainment-gmbh-2015',
