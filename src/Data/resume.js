@@ -186,7 +186,7 @@ export const Experience = {
 			id: 'virtual-niagara-day',
 			displayTitle: 'Virtual Niagara Day 2020',
 			title:
-				'<a rel="noopener noreferrer" href="https://www.niagaracollege.ca/insidenc/2020/10/23/niagara-day-what-to-expect-and-how-to-access-the-oct-28-remote-celebration/ target="_blank">Virtual Niagara Day 2020</a>',
+				'<a rel="noopener noreferrer" href="https://www.niagaracollege.ca/insidenc/2020/10/23/niagara-day-what-to-expect-and-how-to-access-the-oct-28-remote-celebration/" target="_blank">Virtual Niagara Day 2020</a>',
 			subtitle: 'Niagara College ',
 			when: 'October 28, 2020',
 			roles: [
@@ -201,7 +201,7 @@ export const Experience = {
 			id: 'music-niagara-festival',
 			displayTitle: 'Music Niagara Festival 2020',
 			title:
-				'<a rel="noopener noreferrer" href="https://www.musicniagara.org/concerts/steve-mcdade/ target="_blank">Music Niagara Festival 2020</a>',
+				'<a rel="noopener noreferrer" href="https://www.musicniagara.org/concerts/steve-mcdade/" target="_blank">Music Niagara Festival 2020</a>',
 			subtitle: 'Steve McDade',
 			when: 'October 2020',
 			roles: [
