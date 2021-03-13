@@ -15,7 +15,7 @@ export const Main = {
 		country: 'Canada',
 	},
 	website: 'https://www.jmew.ca',
-	experienceDownload: 'http://timbakerdev.com',
+	resumeDownload: 'http://timbakerdev.com',
 	social: [
 		{
 			name: 'twitter',
