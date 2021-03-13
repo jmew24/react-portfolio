@@ -6,7 +6,7 @@ const ExperiencePage = () => {
 	const productionExperience = useMemo(
 		() =>
 			Experience.production.map((experience) => {
-				const imageLink =
+				const galleryLink =
 					Works?.production.find((o) => o.id === experience.id)?.images.length > 0 ? (
 						<span>
 							<br />
@@ -28,9 +28,19 @@ const ExperiencePage = () => {
 						<p className='info'>
 							<span dangerouslySetInnerHTML={{ __html: experience.subtitle }}></span>
 							<span>&bull;</span> <em className='date'>{experience.when}</em>
-							{imageLink}
+							{galleryLink}
 						</p>
-						<p dangerouslySetInnerHTML={{ __html: experience.description }}></p>
+
+						<p className='roles'>
+							{experience?.roles.map((role) => {
+								return (
+									<div className='role'>
+										<span lassName='roleTitle' dangerouslySetInnerHTML={{ __html: `${role.title}: ` }}></span>
+										<span lassName='roleDescription' dangerouslySetInnerHTML={{ __html: role.description }}></span>
+									</div>
+								);
+							})}
+						</p>
 					</div>
 				);
 			}),
@@ -48,7 +58,11 @@ const ExperiencePage = () => {
 							<span>&bull;</span> <em className='date'>{experience.when}</em>
 						</p>
 
-						<p dangerouslySetInnerHTML={{ __html: experience.description }}></p>
+						<p className='roles'>
+							<div className='role'>
+								<span lassName='roleDescription' dangerouslySetInnerHTML={{ __html: experience.description }}></span>
+							</div>
+						</p>
 					</div>
 				);
 			}),
