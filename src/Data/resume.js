@@ -74,7 +74,7 @@ export const Skills = {
 			'Collaborated with external production crews and media to ensure completion of projects',
 			'Managed multiple priorities from one or more projects and tasks',
 			'Efficient in troubleshooting operating errors and providing quick decision making',
-			'Proficient in Non-linear editing software such as Avid Media Composer, Premiere Pro and Final Cut Pro X',
+			'Proficient with Non-linear editing software such as Avid Media Composer, Premiere Pro and Final Cut Pro X',
 		],
 	},
 	coding: {
