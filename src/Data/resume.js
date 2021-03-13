@@ -104,7 +104,7 @@ export const Experience = {
 				"<a href='https://www.niagaracollege.ca/insidenc/2019/12/02/brtf-students-undertake-filming-of-olympic-wrestling-trials/' target='_blank'>Canadian Olympic Wrestling Trials</a>",
 			subtitle: '2020 Summer Games',
 			when: 'December 5th 2019 - December 7th 2019',
-			description: 'Technical Director: <br />Graphics Opperator: <br/>',
+			description: 'Technical Director: <br />Graphics Operator: <br/>',
 		},
 		{
 			id: 'spring-fall-convocation',
@@ -123,7 +123,7 @@ export const Experience = {
 			subtitle: 'Niagara College',
 			when: 'September 2018 - March 2020 ',
 			description:
-				'Director: <br />Technical Director: <br />Replay/Playback: <br />CCU: <br />Graphics Opperator: <br />Camera Opperator: <br />',
+				'Director: <br />Technical Director: <br />Replay/Playback: <br />CCU: <br />Graphics Operator: <br />Camera Operator: <br />',
 		},
 	],
 	coding: [

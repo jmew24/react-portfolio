@@ -30,7 +30,7 @@ const AboutPage = () => {
 						<div className='columns download'>
 							<p>
 								<a href={Main.resumeDownload} className='button'>
-									<i className='fa fa-download'></i>Download Experience
+									<i className='fa fa-download'></i>Download Resume
 								</a>
 							</p>
 						</div>
