@@ -106,11 +106,14 @@ jQuery(document).ready(function ($) {
 		const y = $(window).scrollTop();
 		const nav = $('nav');
 
-		if (y > h * 0.2 && y < h && $(window).outerWidth() > 768) {
+		if (y > h * 0.2 && y + 40 < h && $(window).outerWidth() > 768) {
 			nav.fadeOut('fast');
 		} else {
 			if (y < h * 0.2) {
 				nav.removeClass('opaque').fadeIn('fast');
+				const active_link = $('nav a[href="#home"]');
+				navigation_links.parent().removeClass('current');
+				active_link.parent().addClass('current');
 			} else {
 				nav.addClass('opaque').fadeIn('fast');
 			}
