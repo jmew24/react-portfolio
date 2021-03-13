@@ -8,12 +8,16 @@ const EducationPage = () => {
 			Education.map((education) => {
 				return (
 					<div key={`education-${education.id}`} id={`education-${education.id}`}>
-						<h3>{education.school}</h3>
+						<h3>{education.title}</h3>
 						<p className='info'>
-							{education.degree} <span>&bull;</span>
+							{education.school} <span>&bull;</span>
+							{education.credit !== '' ? (
+								<em className='credit'>
+									{education.credit} <span>&bull;</span>
+								</em>
+							) : null}
 							<em className='date'>{education.graduated}</em>
 						</p>
-						<p dangerouslySetInnerHTML={{ __html: education.description }}></p>
 					</div>
 				);
 			}),

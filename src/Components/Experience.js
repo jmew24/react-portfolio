@@ -6,9 +6,9 @@ const ExperiencePage = () => {
 	const productionExperience = useMemo(
 		() =>
 			Experience.production.map((experience) => {
-				const imageLink =
+				const galleryLink =
 					Works?.production.find((o) => o.id === experience.id)?.images.length > 0 ? (
-						<span>
+						<span key={`experience-goto-${experience.id}`}>
 							<br />
 							<a
 								rel='noreferrer'
@@ -23,14 +23,27 @@ const ExperiencePage = () => {
 					) : null;
 
 				return (
-					<div key={`experience-${experience.id}`} id={`experience-${experience.id}`}>
+					<div key={`experience-${experience.id}`} id={`experience-${experience.id}`} className='experience-item'>
 						<h3 dangerouslySetInnerHTML={{ __html: experience.title }}></h3>
 						<p className='info'>
 							<span dangerouslySetInnerHTML={{ __html: experience.subtitle }}></span>
 							<span>&bull;</span> <em className='date'>{experience.when}</em>
-							{imageLink}
+							{galleryLink}
 						</p>
-						<p dangerouslySetInnerHTML={{ __html: experience.description }}></p>
+
+						<span className='item-wrap'>
+							{experience?.roles.map((role) => {
+								return (
+									<div
+										className='role'
+										key={`experience-${experience.id}-role-${role.title.toLowerCase().replace(' ', '_')}`}
+									>
+										<span className='role-title'>{role.title}:</span>{' '}
+										<span className='role-description' dangerouslySetInnerHTML={{ __html: role.description }}></span>
+									</div>
+								);
+							})}
+						</span>
 					</div>
 				);
 			}),
@@ -41,14 +54,22 @@ const ExperiencePage = () => {
 		() =>
 			Experience.coding.map((experience) => {
 				return (
-					<div key={`experience-${experience.id}`} id={`experience-${experience.id}`}>
+					<div
+						key={`experience-${experience.id}`}
+						id={`experience-${experience.id}`}
+						className='columns experience-item'
+					>
 						<h3 dangerouslySetInnerHTML={{ __html: experience.title }}></h3>
 						<p className='info'>
 							<span dangerouslySetInnerHTML={{ __html: experience.subtitle }}></span>
 							<span>&bull;</span> <em className='date'>{experience.when}</em>
 						</p>
 
-						<p dangerouslySetInnerHTML={{ __html: experience.description }}></p>
+						<span className='item-wrap'>
+							<div className='role' key={`experience-${experience.id}-role`}>
+								<span className='role-description' dangerouslySetInnerHTML={{ __html: experience.description }}></span>
+							</div>
+						</span>
 					</div>
 				);
 			}),
