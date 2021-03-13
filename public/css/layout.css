@@ -454,6 +454,16 @@ nav > a.mobile-btn {
 }
 
 /* skills */
+.skill {
+	border-bottom: 1px solid #e8e8e8;
+	padding-top: 2px;
+}
+
+.row .skill {
+	border-bottom: none;
+	padding-top: none;
+}
+
 .skill-item {
 	font-style: italic;
 }
