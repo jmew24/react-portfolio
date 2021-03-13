@@ -423,6 +423,16 @@ nav > a.mobile-btn {
 	margin-bottom: 0;
 }
 
+.ril__builtinButton:hover,
+.ril__builtinButton button:hover,
+.ril__builtinButton input[type='button']:hover,
+.ril__navButtons:hover,
+.ril__navButtons button:hover,
+.ril__navButtons input[type='button']:hover {
+	color: #313131;
+	background-color: #11abb0;
+}
+
 /* experience */
 .experience-item {
 	margin-bottom: 15px;
