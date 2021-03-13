@@ -38,8 +38,8 @@ const WorksPage = () => {
 				const projectImage = `images/portfolio/coding/${project.image}`;
 				return (
 					<div key={`works-coding-${project.id}`} id={`works-coding-${project.id}`} className='columns works-item'>
-						<div className='item-wrap'>
-							<a rel='noreferrer' href={project.url} title={project.title} target='_blank'>
+						<a rel='noopener noreferrer' href={project.url} title={project.title} target='_blank'>
+							<div className='item-wrap'>
 								<img alt={project.title} src={projectImage} />
 								<div className='overlay'>
 									<div className='works-item-meta'>
@@ -50,8 +50,8 @@ const WorksPage = () => {
 								<div className='link-icon'>
 									<i className='fa fa-link'></i>
 								</div>
-							</a>
-						</div>
+							</div>
+						</a>
 					</div>
 				);
 			}),
