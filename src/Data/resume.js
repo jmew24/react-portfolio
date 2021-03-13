@@ -2,12 +2,10 @@ export const Main = {
 	year: '2021',
 	name: 'James Wilson',
 	occupation: 'TV Production & Software Testing',
-	description:
-		'Here will be your description. Use this to describe what you do or whatever you feel best describes yourself to a potential employer',
+	description: 'Here you will find everything about me. Keep scrolling to see my experiences and skills',
 	image: 'profilepic.jpg',
 	bio:
-		'Use this bio section as your way of describing yourself and saying what you do, what technologies you like to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing in.',
-	contactMessage: 'Here is where you should write your message to readers to have them get in contact with you.',
+		'I am passionate about using problem-solving and teamwork to create the best productions possible that are professional and creative. I successfully integrate my skills in broadcasting and programming to provide innovative solutions. My knowledge of media production and communication highlight my ability to find alternate ways to inform and entertain audiences.',
 	email: 'james@jmew.ca',
 	address: {
 		region: 'Niagara',
@@ -74,7 +72,7 @@ export const Skills = {
 			'Collaborated with external production crews and media to ensure completion of projects',
 			'Managed multiple priorities from one or more projects and tasks',
 			'Efficient in troubleshooting operating errors and providing quick decision making',
-			'Proficient in Non-linear editing software such as Avid Media Composer, Premiere Pro and Final Cut Pro X',
+			'Proficient with Non-linear editing software such as Avid Media Composer, Premiere Pro and Final Cut Pro X',
 		],
 	},
 	coding: {
@@ -186,7 +184,7 @@ export const Experience = {
 			id: 'virtual-niagara-day',
 			displayTitle: 'Virtual Niagara Day 2020',
 			title:
-				'<a rel="noopener noreferrer" href="https://www.niagaracollege.ca/insidenc/2020/10/23/niagara-day-what-to-expect-and-how-to-access-the-oct-28-remote-celebration/ target="_blank">Virtual Niagara Day 2020</a>',
+				'<a rel="noopener noreferrer" href="https://www.niagaracollege.ca/insidenc/2020/10/23/niagara-day-what-to-expect-and-how-to-access-the-oct-28-remote-celebration/" target="_blank">Virtual Niagara Day 2020</a>',
 			subtitle: 'Niagara College ',
 			when: 'October 28, 2020',
 			roles: [
@@ -201,7 +199,7 @@ export const Experience = {
 			id: 'music-niagara-festival',
 			displayTitle: 'Music Niagara Festival 2020',
 			title:
-				'<a rel="noopener noreferrer" href="https://www.musicniagara.org/concerts/steve-mcdade/ target="_blank">Music Niagara Festival 2020</a>',
+				'<a rel="noopener noreferrer" href="https://www.musicniagara.org/concerts/steve-mcdade/" target="_blank">Music Niagara Festival 2020</a>',
 			subtitle: 'Steve McDade',
 			when: 'October 2020',
 			roles: [
