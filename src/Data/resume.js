@@ -51,48 +51,14 @@ export const Education = [
 ];
 
 export const Skills = {
-	productionSkillMessage: 'Production Skills',
-	codingSkillMessage: 'Programming Skills',
-	production: [
-		{
-			name: 'Avid Media Composer',
-			level: '45%',
-		},
-		{
-			name: 'Pro Tools',
-			level: '45%',
-		},
-		{
-			name: 'Adobe Audition',
-			level: '50%',
-		},
-		{
-			name: 'Final Cut Pro',
-			level: '55%',
-		},
-		{
-			name: 'Adobe Premiere Pro',
-			level: '75%',
-		},
-	],
-	coding: [
-		{
-			name: 'Python',
-			level: '50%',
-		},
-		{
-			name: 'C#',
-			level: '60%',
-		},
-		{
-			name: 'ReactJs',
-			level: '80%',
-		},
-		{
-			name: 'NodeJS',
-			level: '86%',
-		},
-	],
+	production: {
+		title: 'Production Skills',
+		list: ['Avid Media Composer', 'Pro Tools', 'Adobe Audition', 'Final Cut Pro', 'Adobe Premiere Pro'],
+	},
+	coding: {
+		title: 'Programming Skills',
+		list: ['NodeJS', 'ReactJS', 'GraphQL', 'NestJS', 'Python', 'C#', 'MySQL'],
+	},
 };
 
 export const Experience = {
