@@ -7,9 +7,9 @@ const SkillsPage = () => {
 		() =>
 			Skills.production.list.map((skill, index) => {
 				return (
-					<em key={`${skill}`} id={`skill-production-${skill}`}>
-						<span>&bull;</span> <span>{skill}</span> <br />
-					</em>
+					<li key={`${skill}`} id={`skill-production-${skill}`}>
+						{skill}
+					</li>
 				);
 			}),
 		[],
@@ -19,9 +19,9 @@ const SkillsPage = () => {
 		() =>
 			Skills.coding.list.map((skill, index) => {
 				return (
-					<em key={`${skill}`} id={`skill-production-${skill}`}>
-						<span>&bull;</span> <span>{skill}</span> <br />
-					</em>
+					<li key={`${skill}`} id={`skill-coding-${skill}`}>
+						{skill}
+					</li>
 				);
 			}),
 		[],
@@ -50,7 +50,9 @@ const SkillsPage = () => {
 
 				<div className='eight columns main-col'>
 					<div className='row skill'>
-						<p className='skills'>{productionSkills}</p>
+						<p className='skills'>
+							<ul>{productionSkills}</ul>
+						</p>
 					</div>
 				</div>
 
@@ -62,7 +64,9 @@ const SkillsPage = () => {
 
 				<div className='eight columns main-col'>
 					<div className='row item'>
-						<p className='skills'>{codingSkills}</p>
+						<p className='skills'>
+							<ul>{codingSkills}</ul>
+						</p>
 					</div>
 				</div>
 
