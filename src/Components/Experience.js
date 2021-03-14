@@ -24,7 +24,7 @@ const ExperiencePage = () => {
 
 				return (
 					<div key={`experience-${experience.id}`} id={`experience-${experience.id}`} className='experience-item'>
-						<h3 dangerouslySetInnerHTML={{ __html: experience.title }}></h3>
+						<h3 className='experience-title' dangerouslySetInnerHTML={{ __html: experience.title }}></h3>
 						<p className='info'>
 							<span dangerouslySetInnerHTML={{ __html: experience.subtitle }}></span>
 							<span>&bull;</span> <em className='date'>{experience.when}</em>
@@ -59,7 +59,7 @@ const ExperiencePage = () => {
 						id={`experience-${experience.id}`}
 						className='columns experience-item'
 					>
-						<h3 dangerouslySetInnerHTML={{ __html: experience.title }}></h3>
+						<h3 className='experience-title' dangerouslySetInnerHTML={{ __html: experience.title }}></h3>
 						<p className='info'>
 							<span dangerouslySetInnerHTML={{ __html: experience.subtitle }}></span>
 							<span>&bull;</span> <em className='date'>{experience.when}</em>
