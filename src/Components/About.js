@@ -29,7 +29,7 @@ const AboutPage = () => {
 						</div>
 						<div className='columns download'>
 							<p>
-								<a href={Main.resumeDownload} className='button'>
+								<a rel='noopener noreferrer' href={Main.resumeDownload} target='_blank' className='button'>
 									<i className='fa fa-download'></i>Download Resume
 								</a>
 							</p>
