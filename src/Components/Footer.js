@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
 
-import { Main } from '../Data/resume';
+import general from '../Data/General';
 
 const FooterPage = () => {
 	const networks = useMemo(
 		() =>
-			Main.social.map((network) => {
+			general.social.map((network) => {
 				return (
 					<li key={network.name}>
 						<a href={network.url}>
@@ -25,7 +25,7 @@ const FooterPage = () => {
 
 					<ul className='copyright'>
 						<li>
-							&copy; Copyright {Main.year} {Main.name}
+							&copy; Copyright {general.main.year} {general.main.name}
 						</li>
 						<li>
 							Design by{' '}
