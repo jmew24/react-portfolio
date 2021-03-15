@@ -7,9 +7,10 @@ import About from './Components/About';
 import Experience from './Components/Experience';
 import Skills from './Components/Skills';
 import Education from './Components/Education';
-import Works from './Components/Works';
+import Gallery from './Components/Gallery';
+import Projects from './Components/Projects';
 
-import * as resume from './Data/resume';
+import * as resume from './Data';
 
 const AppPage = () => {
 	useEffect(() => {
@@ -27,7 +28,10 @@ const AppPage = () => {
 				<Skills />
 				<Education />
 			</section>
-			<Works />
+			<section className='bottom'>
+				<Gallery />
+				<Projects />
+			</section>
 			<Footer />
 		</div>
 	) : null;

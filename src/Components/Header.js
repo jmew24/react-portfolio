@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
 
-import { Main } from '../Data/resume';
+import general from '../Data/General';
 
 const HeaderPage = () => {
 	const networks = useMemo(
 		() =>
-			Main.social.map((network) => {
+			general.social.map((network) => {
 				return (
 					<li key={network.name}>
 						<a href={network.url}>
@@ -53,18 +53,23 @@ const HeaderPage = () => {
 							Education
 						</a>
 					</li>
+					<li className='nav-list-item'>
+						<a className='smoothscroll' href='#gallery'>
+							Gallery & Projects
+						</a>
+					</li>
 				</ul>
 			</nav>
 
 			<div className='row banner'>
 				<div className='banner-text'>
-					<h1 className='responsive-headline'>I'm {Main.name}.</h1>
+					<h1 className='responsive-headline'>I'm {general.main.name}.</h1>
 					<h3>
 						I'm{' '}
 						<span>
-							{Main.address.province} {Main.address.country}
+							{general.address.province} {general.address.country}
 						</span>{' '}
-						based and work in <span>{Main.occupation}</span>. {Main.description}.
+						based and work in <span>{general.main.occupation}</span>. {general.main.description}.
 					</h3>
 					<hr />
 					<ul className='social'>{networks}</ul>

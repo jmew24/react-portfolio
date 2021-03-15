@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
 
-import { Skills } from '../Data/resume';
+import skills from '../Data/Skills';
 
 const SkillsPage = () => {
 	const productionSkills = useMemo(
 		() =>
-			Skills.production.list.map((skill, index) => {
+			skills.production.list.map((skill, index) => {
 				return (
 					<li key={`${skill}`} id={`skill-production-${skill}`}>
 						{skill}
@@ -17,7 +17,7 @@ const SkillsPage = () => {
 
 	const codingSkills = useMemo(
 		() =>
-			Skills.coding.list.map((skill, index) => {
+			skills.coding.list.map((skill, index) => {
 				return (
 					<li key={`${skill}`} id={`skill-coding-${skill}`}>
 						{skill}
@@ -29,7 +29,7 @@ const SkillsPage = () => {
 
 	const codingLanguages = useMemo(
 		() =>
-			Skills.coding.languages.list.map((language, index) => {
+			skills.coding.languages.list.map((language, index) => {
 				return (
 					<em key={`${language}`} id={`languages-production-${language}`}>
 						{index > 0 ? <span>&bull;</span> : null} <span dangerouslySetInnerHTML={{ __html: language }}></span>{' '}
@@ -44,35 +44,35 @@ const SkillsPage = () => {
 			<div className='row skill'>
 				<div className='four columns header-col'>
 					<h1>
-						<span>{Skills.production.title}</span>
+						<span>{skills.production.title}</span>
 					</h1>
 				</div>
 
 				<div className='eight columns main-col'>
 					<div className='row skill'>
-						<p className='skills'>
+						<div className='skills'>
 							<ul>{productionSkills}</ul>
-						</p>
+						</div>
 					</div>
 				</div>
 
 				<div className='four columns header-col'>
 					<h1>
-						<span>{Skills.coding.title}</span>
+						<span>{skills.coding.title}</span>
 					</h1>
 				</div>
 
 				<div className='eight columns main-col'>
 					<div className='row item'>
-						<p className='skills'>
+						<div className='skills'>
 							<ul>{codingSkills}</ul>
-						</p>
+						</div>
 					</div>
 				</div>
 
 				<div className='four columns header-col'>
 					<h1>
-						<span>{Skills.coding.languages.title}</span>
+						<span>{skills.coding.languages.title}</span>
 					</h1>
 				</div>
 

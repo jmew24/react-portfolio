@@ -67,13 +67,10 @@ const LightBox = (props) => {
 		>
 			<img alt={props.title ? props.title : ''} src={state.images[0].src} />{' '}
 			<div className='overlay'>
-				<div className='works-item-meta'>
+				<div className='gallery-item-meta'>
 					<h5>{props.title}</h5>
 					<p>Click to view photo gallery</p>
 				</div>
-			</div>
-			<div className='link-icon'>
-				<i className='fa fa-link'></i>
 			</div>
 			{state.isOpen && (
 				<Lightbox

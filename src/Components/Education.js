@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
 
-import { Education } from '../Data/resume';
+import education from '../Data/Education';
 
 const EducationPage = () => {
-	const education = useMemo(
+	const educationData = useMemo(
 		() =>
-			Education.map((education) => {
+			education.map((education) => {
 				return (
 					<div key={`education-${education.id}`} id={`education-${education.id}`}>
 						<h3>{education.title}</h3>
@@ -35,7 +35,7 @@ const EducationPage = () => {
 
 				<div className='nine columns main-col'>
 					<div className='row item'>
-						<div className='twelve columns'>{education}</div>
+						<div className='twelve columns'>{educationData}</div>
 					</div>
 				</div>
 			</div>

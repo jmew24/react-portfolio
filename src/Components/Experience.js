@@ -1,23 +1,24 @@
 import React, { useMemo } from 'react';
 
-import { Experience, Works } from '../Data/resume';
+import experience from '../Data/Experience';
+import gallery from '../Data/Gallery';
 
 const ExperiencePage = () => {
 	const productionExperience = useMemo(
 		() =>
-			Experience.production.map((experience) => {
+			experience.production.map((experience) => {
 				const galleryLink =
-					Works?.production.find((o) => o.id === experience.id)?.images.length > 0 ? (
+					gallery?.production.find((o) => o.id === experience.id)?.images.length > 0 ? (
 						<span key={`experience-goto-${experience.id}`}>
 							<br />
 							<a
 								rel='noreferrer'
 								className='smoothscroll'
-								href={`#works-production-${experience.id}`}
+								href={`#gallery-production-${experience.id}`}
 								title={experience.id}
 							>
 								{' '}
-								[Goto {experience.displayTitle} Images]
+								[Goto {experience.displayTitle} Photos]
 							</a>
 						</span>
 					) : null;
@@ -52,7 +53,23 @@ const ExperiencePage = () => {
 
 	const codingExperience = useMemo(
 		() =>
-			Experience.coding.map((experience) => {
+			experience.coding.map((experience) => {
+				const galleryLink =
+					gallery?.production.find((o) => o.id === experience.id)?.images.length > 0 ? (
+						<span key={`experience-goto-${experience.id}`}>
+							<br />
+							<a
+								rel='noreferrer'
+								className='smoothscroll'
+								href={`#gallery-coding-${experience.id}`}
+								title={experience.id}
+							>
+								{' '}
+								[Goto {experience.displayTitle} Photos]
+							</a>
+						</span>
+					) : null;
+
 				return (
 					<div
 						key={`experience-${experience.id}`}
@@ -63,6 +80,7 @@ const ExperiencePage = () => {
 						<p className='info'>
 							<span dangerouslySetInnerHTML={{ __html: experience.subtitle }}></span>
 							<span>&bull;</span> <em className='date'>{experience.when}</em>
+							{galleryLink}
 						</p>
 
 						<span className='item-wrap'>

@@ -35,6 +35,7 @@ jQuery(document).ready(function ($) {
 		switch (_id.toString().toLowerCase()) {
 			case 'home':
 			case 'about':
+			case 'bottom':
 				_offset = 0;
 
 				break;
@@ -69,7 +70,6 @@ jQuery(document).ready(function ($) {
 
 	const sections = $('section');
 	const navigation_links = $('nav a');
-
 	sections.waypoint({
 		handler: function (direction) {
 			if (isScrolling) return;
@@ -104,6 +104,8 @@ jQuery(document).ready(function ($) {
 	$(window).on('scroll', function () {
 		const h = $('header').height();
 		const y = $(window).scrollTop();
+		const wh = $(window).height();
+		const dh = $(document).height();
 		const nav = $('nav');
 
 		if (y > h * 0.2 && y + 40 < h && $(window).outerWidth() > 768) {
@@ -111,11 +113,22 @@ jQuery(document).ready(function ($) {
 		} else {
 			if (y < h * 0.2) {
 				nav.removeClass('opaque').fadeIn('fast');
-				const active_link = $('nav a[href="#home"]');
-				navigation_links.parent().removeClass('current');
-				active_link.parent().addClass('current');
 			} else {
 				nav.addClass('opaque').fadeIn('fast');
+			}
+
+			if (y < h * 0.2) {
+				const active_link = $('nav a[href="#home"]');
+				if (active_link !== undefined) {
+					navigation_links.parent().removeClass('current');
+					active_link.parent().addClass('current');
+				}
+			} else if (y + wh === dh) {
+				const active_link = $('nav a[href="#gallery"]');
+				if (active_link !== undefined) {
+					navigation_links.parent().removeClass('current');
+					active_link.parent().addClass('current');
+				}
 			}
 		}
 	});
