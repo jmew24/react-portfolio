@@ -39,6 +39,24 @@ const production = [
 		],
 	},
 	{
+		id: 'music-niagara-festival',
+		title: 'Music Niagara Festival',
+		images: [
+			{
+				file: 'control_area.jpg',
+				description: 'Outdoor control room area',
+			},
+			{
+				file: 'multi_viewer.jpg',
+				description: 'Multi-viewer and ATEM software',
+			},
+			{
+				file: 'stream_deck.jpg',
+				description: 'Stream Deck used for video switching',
+			},
+		],
+	},
+	{
 		id: 'brtf-sports',
 		title: 'BRTF Sports',
 		images: [
@@ -61,20 +79,56 @@ const production = [
 		],
 	},
 	{
-		id: 'music-niagara-festival',
-		title: 'Music Niagara Festival',
+		id: 'other-productions',
+		title: 'Other Productions',
 		images: [
 			{
-				file: 'control_area.jpg',
-				description: 'Outdoor control room area',
+				file: 'crnc_rock_around_the_clock.jpg',
+				description: 'Technical Director for CRNC Rock Around The Clock using a TriCaster and remote Zoom feeds',
 			},
 			{
-				file: 'multi_viewer.jpg',
-				description: 'Multi-viewer and ATEM software',
+				file: 'inside_niagara_camera.jpg',
+				description: 'Filming in a bowling alley for Inside Niagara',
 			},
 			{
-				file: 'stream_deck.jpg',
-				description: 'Stream Deck used for video switching',
+				file: 'music_niagara_td.jpg',
+				description: 'Technical Director for a Music Niagara shoot',
+			},
+			{
+				file: 'music_shoot_1.jpg',
+				description: 'Setting up a high shot of a stage',
+			},
+			{
+				file: 'music_shoot_2.jpg',
+				description: 'Checking cameras for a music shoot',
+			},
+			{
+				file: 'camera_tutorial_1.jpg',
+				description: 'Filming a camera tutorial for BRTF Engineering',
+			},
+			{
+				file: 'camera_tutorial_2.jpg',
+				description: 'Filming a camera tutorial for BRTF Engineering',
+			},
+			{
+				file: 'camera_tutorial_3.jpg',
+				description: 'Pickup shots at my house for the BRTF Engineering video',
+			},
+			{
+				file: 'chef_series_1.jpg',
+				description: 'Setting up to film a Chef Series',
+			},
+			{
+				file: 'chef_series_2.jpg',
+				description: 'Chef Series multi-viewer',
+			},
+			{
+				file: 'virtual-inside-niagara-editing.jpg',
+				description: 'Editing social media videos for the first ever virtual Inside Niagara',
+			},
+			{
+				file: 'virtual_open_house_mv.jpg',
+				description: 'Setting up for Niagara Colleges virtual open house',
 			},
 		],
 	},
