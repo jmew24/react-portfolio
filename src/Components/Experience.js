@@ -71,11 +71,7 @@ const ExperiencePage = () => {
 					) : null;
 
 				return (
-					<div
-						key={`experience-${experience.id}`}
-						id={`experience-${experience.id}`}
-						className='columns experience-item'
-					>
+					<div key={`experience-${experience.id}`} id={`experience-${experience.id}`} className='experience-item'>
 						<h3 className='experience-title' dangerouslySetInnerHTML={{ __html: experience.title }}></h3>
 						<p className='info'>
 							<span dangerouslySetInnerHTML={{ __html: experience.subtitle }}></span>
