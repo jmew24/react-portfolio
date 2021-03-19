@@ -39,6 +39,24 @@ const production = [
 		],
 	},
 	{
+		id: 'music-niagara-festival',
+		title: 'Music Niagara Festival',
+		images: [
+			{
+				file: 'control_area.jpg',
+				description: 'Outdoor control room area',
+			},
+			{
+				file: 'multi_viewer.jpg',
+				description: 'Multi-viewer and ATEM software',
+			},
+			{
+				file: 'stream_deck.jpg',
+				description: 'Stream Deck used for video switching',
+			},
+		],
+	},
+	{
 		id: 'brtf-sports',
 		title: 'BRTF Sports',
 		images: [
@@ -57,24 +75,6 @@ const production = [
 			{
 				file: 'volleyball_gfx.jpg',
 				description: 'Custom graphics pack for volleyball using Ross Video Xpression',
-			},
-		],
-	},
-	{
-		id: 'music-niagara-festival',
-		title: 'Music Niagara Festival',
-		images: [
-			{
-				file: 'control_area.jpg',
-				description: 'Outdoor control room area',
-			},
-			{
-				file: 'multi_viewer.jpg',
-				description: 'Multi-viewer and ATEM software',
-			},
-			{
-				file: 'stream_deck.jpg',
-				description: 'Stream Deck used for video switching',
 			},
 		],
 	},
