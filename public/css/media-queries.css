@@ -46,10 +46,22 @@
 
 	/* About Section
    ------------------------------------------------------------------- */
+	.about {
+		padding-top: 48px;
+		padding-bottom: 33px;
+	}
+
 	.about .profile-pic {
 		width: 114px;
 		height: 114px;
-		margin-left: 12px;
+		/* Firefox */
+		margin-left: -moz-calc(50% - 57px);
+		/* WebKit */
+		margin-left: -webkit-calc(50% - 57px);
+		/* Opera */
+		margin-left: -o-calc(50% - 57px);
+		/* Standard */
+		margin-left: calc(50% - 57px);
 	}
 	.about .contact-details {
 		width: 50%;
@@ -194,11 +206,15 @@
 		display: none;
 	}
 
+	/* Main Section
+   -------------------------------------------------------------------- */
+	.main {
+		padding-top: 45px;
+		padding-bottom: 36px;
+	}
+
 	/* About Section
    -------------------------------------------------------------------- */
-	.about .profile-pic {
-		display: none;
-	}
 	.about .download .button {
 		width: 100%;
 		text-align: center;
@@ -208,21 +224,26 @@
 		padding-right: 30px;
 	}
 
-	/* Experience Section
+	/* Experience/Skill Section
    --------------------------------------------------------------------- */
-	.experience .header-col {
+	.experience .header-col,
+	.skill .header-col {
 		padding-top: 0;
 		margin-bottom: 48px;
 		text-align: center;
 	}
-	.experience h1 {
+	.experience h1,
+	.skill h1 {
 		letter-spacing: 3px;
 	}
-	.experience .main-col {
+	.experience .main-col,
+	.skill .main-col {
 		padding-right: 30px;
 	}
 	.experience h3,
-	.experience .info {
+	.experience .info,
+	.skill h3,
+	.skill .info {
 		text-align: center;
 	}
 
