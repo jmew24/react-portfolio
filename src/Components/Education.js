@@ -27,13 +27,13 @@ const EducationPage = () => {
 	return (
 		<section id='education'>
 			<div className='row education'>
-				<div className='three columns header-col'>
+				<div className='four columns header-col'>
 					<h1>
 						<span>Education</span>
 					</h1>
 				</div>
 
-				<div className='nine columns main-col'>
+				<div className='eight columns main-col'>
 					<div className='row item'>
 						<div className='twelve columns'>{educationData}</div>
 					</div>
