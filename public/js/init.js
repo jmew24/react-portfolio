@@ -22,6 +22,7 @@ jQuery(document).ready(function ($) {
 	});
 	let isScrolling = false;
 	let active_id = null;
+	let last_id = null;
 
 	$('.smoothscroll').on('click', function (e) {
 		e.preventDefault();
@@ -45,6 +46,7 @@ jQuery(document).ready(function ($) {
 		}
 
 		isScrolling = true;
+		if (active_id !== 'gallery') last_id = active_id;
 		window.current_id = _id;
 		window.dispatchEvent(id_Change);
 
@@ -157,21 +159,22 @@ jQuery(document).ready(function ($) {
 		}
 	});
 
+	window.addEventListener('nav-reset', () => {
+		if (active_id === 'gallery') {
+			const active_link = document.getElementById(`nav-${last_id}`);
+			if (active_link !== undefined && active_link !== null) {
+				active_id = active_link.id;
+				navigation_links.parent().removeClass('current');
+				active_link.classList.add('current');
+			}
+		}
+	});
+
 	/*----------------------------------------------------*/
 	/*	Modal Popup
 ------------------------------------------------------*/
-
-	$('.item-wrap a').magnificPopup({
-		type: 'inline',
-		fixedContentPos: false,
-		removalDelay: 200,
-		showCloseBtn: false,
-		mainClass: 'mfp-fade',
-	});
-
 	$(document).on('click', '.popup-modal-dismiss', function (e) {
 		e.preventDefault();
-		$.magnificPopup.close();
 	});
 
 	/*----------------------------------------------------*/

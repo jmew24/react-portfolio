@@ -52,7 +52,10 @@ const LightBox = (props) => {
 	useEffect(() => {
 		if (!_isMounted.current) return;
 
-		if (!state.isOpen) _curId.current = '';
+		if (!state.isOpen) {
+			_curId.current = '';
+			window.dispatchEvent(new Event('nav-reset'));
+		}
 	}, [state.isOpen]);
 
 	return (
