@@ -116,24 +116,24 @@ const production = [
 ];
 
 const coding = [
-  {
-    id: "hitbox-entertainment-gmbh-2020",
-    title: "Hitbox Entertainment GmbH",
-    subtitle: "Software Engineer",
-    when: "November 2020-Present",
-    roles: [],
-    description:
-      "Created frontend solutions for administration and user management tools using ReactJS and ReactAdmin. Worked on the backend to write secure GraphQL queries and mutations for managing user accounts using NestJS.",
-  },
-  {
-    id: "hitbox-entertainment-gmbh-2015",
-    title: "Hitbox Entertainment GmbH",
-    subtitle: "Software Testing",
-    when: "June 2015–November 2020",
-    roles: [],
-    description:
-      "Created, modified, and tested code, forms and scripts that allow computer applications to run. Worked from specifications drawn up by software developers or other individuals. Assisted software developers by analyzing user needs and designing testing solutions. Developed and wrote computer programs to store, locate, and retrieve specific documents, data, and information.",
-  },
+	{
+		id: 'hitbox-entertainment-gmbh-2020',
+		title: 'Hitbox Entertainment GmbH',
+		subtitle: 'Software Engineer',
+		when: 'November 2020-Present',
+		roles: [],
+		description:
+			'Created frontend solutions for administration and user management tools using <a rel="noopener noreferrer" href="https://reactjs.org/" target="_blank">ReactJS</a> and <a rel="noopener noreferrer" href="https://marmelab.com/react-admin/" target="_blank">ReactAdmin</a>. Worked on the backend to write secure <a rel="noopener noreferrer" href="https://graphql.org/" target="_blank">GraphQL</a> queries and mutations for managing user accounts using <a rel="noopener noreferrer" href="https://nestjs.com/" target="_blank">NestJS</a>.',
+	},
+	{
+		id: 'hitbox-entertainment-gmbh-2015',
+		title: 'Hitbox Entertainment GmbH',
+		subtitle: 'Software Testing',
+		when: 'June 2015–November 2020',
+		roles: [],
+		description:
+			'Created, modified, and tested code, forms and scripts that allow computer applications to run. Worked from specifications drawn up by software developers or other individuals. Assisted software developers by analyzing user needs and designing testing solutions. Developed and wrote computer programs to store, locate, and retrieve specific documents, data, and information.',
+	},
 ];
 
 const experience = {

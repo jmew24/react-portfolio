@@ -20,40 +20,33 @@ const HeaderPage = () => {
 	return (
 		<header id='home'>
 			<nav id='nav-wrap'>
-				<a className='mobile-btn' href='#nav-wrap' title='Show navigation'>
-					Show navigation
-				</a>
-				<a className='mobile-btn' href='#home' title='Hide navigation'>
-					Hide navigation
-				</a>
-
 				<ul id='nav' className='nav-list'>
-					<li className='nav-list-item current'>
+					<li className='nav-list-item current' id='nav-home'>
 						<a className='smoothscroll' href='#home'>
 							Home
 						</a>
 					</li>
-					<li className='nav-list-item'>
+					<li className='nav-list-item' id='nav-about'>
 						<a className='smoothscroll' href='#about'>
 							About
 						</a>
 					</li>
-					<li className='nav-list-item'>
+					<li className='nav-list-item' id='nav-experience'>
 						<a className='smoothscroll' href='#experience'>
 							Experience
 						</a>
 					</li>
-					<li className='nav-list-item'>
+					<li className='nav-list-item' id='nav-skills'>
 						<a className='smoothscroll' href='#skills'>
 							Skills
 						</a>
 					</li>
-					<li className='nav-list-item'>
+					<li className='nav-list-item' id='nav-education'>
 						<a className='smoothscroll' href='#education'>
 							Education
 						</a>
 					</li>
-					<li className='nav-list-item'>
+					<li className='nav-list-item' id='nav-gallery'>
 						<a className='smoothscroll' href='#gallery'>
 							Gallery & Projects
 						</a>

@@ -21,6 +21,8 @@ jQuery(document).ready(function ($) {
 		detail: { id: () => window.current_id },
 	});
 	let isScrolling = false;
+	let active_id = null;
+	let last_id = null;
 
 	$('.smoothscroll').on('click', function (e) {
 		e.preventDefault();
@@ -44,6 +46,7 @@ jQuery(document).ready(function ($) {
 		}
 
 		isScrolling = true;
+		if (active_id !== 'gallery') last_id = active_id;
 		window.current_id = _id;
 		window.dispatchEvent(id_Change);
 
@@ -56,9 +59,13 @@ jQuery(document).ready(function ($) {
 				800,
 				'swing',
 				function () {
-					const active_link = $('nav a[href="#' + _id + '"]');
-					navigation_links.parent().removeClass('current');
-					active_link.parent().addClass('current');
+					const element = document.getElementById(_id);
+					const active_link = document.getElementById(`nav-${_id}`);
+					if (element !== undefined && active_link !== undefined && active_link !== null && element.id !== active_id) {
+						active_id = element.id;
+						navigation_links.parent().removeClass('current');
+						active_link.classList.add('current');
+					}
 					isScrolling = false;
 				},
 			);
@@ -68,22 +75,37 @@ jQuery(document).ready(function ($) {
 	/* Highlight the current section in the navigation bar
 ------------------------------------------------------*/
 
-	const sections = $('section');
 	const navigation_links = $('nav a');
-	sections.waypoint({
-		handler: function (direction) {
+	const config = {
+		root: null,
+		rootMargin: '-96px 0px -48% 0px',
+		threshold: 0.2,
+	};
+	const callback = (entries) => {
+		if (isScrolling) return;
+		entries.forEach((entry) => {
+			let element = null,
+				active_link = null;
+
 			if (isScrolling) return;
 
-			let active_section = $(this);
-			if (direction === 'up') active_section = active_section.prev();
-
-			if (active_section.attr('id') !== undefined) {
-				const active_link = $('nav a[href="#' + active_section.attr('id') + '"]');
-				navigation_links.parent().removeClass('current');
-				active_link.parent().addClass('current');
+			if (entry.isIntersecting) {
+				element = entry.target;
+				if (element != null && element.id !== undefined && element.id !== active_id) {
+					active_link = document.getElementById(`nav-${element.id}`);
+					if (active_link !== undefined && active_link !== null) {
+						active_id = element.id;
+						navigation_links.parent().removeClass('current');
+						active_link.classList.add('current');
+					}
+				}
 			}
-		},
-		offset: 150,
+		});
+	};
+	const observer = new IntersectionObserver(callback, config);
+
+	document.querySelectorAll('section').forEach((section) => {
+		observer.observe(section);
 	});
 
 	/*----------------------------------------------------*/
@@ -118,17 +140,32 @@ jQuery(document).ready(function ($) {
 			}
 
 			if (y < h * 0.2) {
-				const active_link = $('nav a[href="#home"]');
-				if (active_link !== undefined) {
+				const element = document.getElementById('home');
+				const active_link = document.getElementById(`nav-home`);
+				if (element !== undefined && element.id !== active_id && active_link !== undefined && active_link !== null) {
+					active_id = element.id;
 					navigation_links.parent().removeClass('current');
-					active_link.parent().addClass('current');
+					active_link.classList.add('current');
 				}
 			} else if (y + wh === dh) {
-				const active_link = $('nav a[href="#gallery"]');
-				if (active_link !== undefined) {
+				const element = document.getElementById('gallery');
+				const active_link = document.getElementById(`nav-gallery`);
+				if (element !== null && element.id !== active_id && active_link !== undefined && active_link !== null) {
+					active_id = element.id;
 					navigation_links.parent().removeClass('current');
-					active_link.parent().addClass('current');
+					active_link.classList.add('current');
 				}
+			}
+		}
+	});
+
+	window.addEventListener('nav-reset', () => {
+		if (active_id === 'gallery') {
+			const active_link = document.getElementById(`nav-${last_id}`);
+			if (active_link !== undefined && active_link !== null) {
+				active_id = active_link.id;
+				navigation_links.parent().removeClass('current');
+				active_link.classList.add('current');
 			}
 		}
 	});
@@ -136,18 +173,8 @@ jQuery(document).ready(function ($) {
 	/*----------------------------------------------------*/
 	/*	Modal Popup
 ------------------------------------------------------*/
-
-	$('.item-wrap a').magnificPopup({
-		type: 'inline',
-		fixedContentPos: false,
-		removalDelay: 200,
-		showCloseBtn: false,
-		mainClass: 'mfp-fade',
-	});
-
 	$(document).on('click', '.popup-modal-dismiss', function (e) {
 		e.preventDefault();
-		$.magnificPopup.close();
 	});
 
 	/*----------------------------------------------------*/
