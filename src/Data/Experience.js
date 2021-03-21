@@ -1,115 +1,118 @@
 const production = [
-	{
-		id: 'virtual-niagara-day',
-		displayTitle: 'Virtual Niagara Day 2020',
-		title:
-			'<a rel="noopener noreferrer" href="https://www.niagaracollege.ca/insidenc/2020/10/23/niagara-day-what-to-expect-and-how-to-access-the-oct-28-remote-celebration/" target="_blank">Virtual Niagara Day 2020</a>',
-		subtitle: 'Niagara College ',
-		when: 'October 28, 2020',
-		roles: [
-			{
-				title: 'Media Director',
-				description:
-					'Used the CasperCG system to play back pre-recorded faculty and award videos, managed multiple live remote crews surprising award winners at their houses using Discord Video Calls to transmit the feeds back to the control room',
-			},
-		],
-	},
-	{
-		id: 'spring-fall-convocation',
-		displayTitle: 'Niagara College Convocation',
-		title:
-			'<a rel="noopener noreferrer" href="https://www.niagaracollege.ca/virtualconvocation/" target="_blank">Niagara College Convocation</a>',
-		subtitle: 'Spring & Fall Ceremonies',
-		when: 'June & October 2020',
-		roles: [
-			{
-				title: 'Media Director',
-				description: 'Managed live playback of pre-recorded video elements for over an hour of content per show',
-			},
-			{
-				title: 'Name Readings',
-				description:
-					'<a rel="noopener noreferrer" href="https://github.com/ReadySetLinq/convocation-controller/tree/dev" target="_blank">created a program</a> to display students’ names by academic course which was used to record voice-over name readings for over 10,000 graduates',
-			},
-			{
-				title: 'Pre-Production',
-				description: 'Assisted in building show sets, built a remote production studio',
-			},
-		],
-	},
-	{
-		id: 'music-niagara-festival',
-		displayTitle: 'Music Niagara Festival 2020',
-		title:
-			'<a rel="noopener noreferrer" href="https://www.musicniagara.org/concerts/steve-mcdade/" target="_blank">Music Niagara Festival 2020</a>',
-		subtitle: 'Steve McDade',
-		when: 'October 2020',
-		roles: [
-			{
-				title: 'Technical Producer',
-				description:
-					'Set-up outdoor broadcast control area to film a multi-camera music production, set up cameras and microphones to capture all angles and sounds of various string instruments',
-			},
-			{
-				title: 'Technical Director',
-				description:
-					'Operated a stream deck to control the Blackmagic Design ATEM video switcher, followed director’s queues to match musical beats to live camera changes following the story of the song',
-			},
-		],
-	},
-	{
-		id: '2020-summer-games',
-		displayTitle: 'Canadian Olympic Wrestling Trials',
-		title:
-			'<a rel="noopener noreferrer" href="https://www.niagaracollege.ca/insidenc/2019/12/02/brtf-students-undertake-filming-of-olympic-wrestling-trials/" target="_blank">Canadian Olympic Wrestling Trials</a>',
-		subtitle: '2020 Summer Games',
-		when: 'December 5-7th 2019',
-		roles: [
-			{
-				title: 'Graphics Operator',
-				description:
-					'Created athlete profiles in Photoshop for all competitors in the finals, used the Ross Video Xpression system to display these live profiles for the broadcast and in-house video wall',
-			},
-			{
-				title: 'Technical Director',
-				description: 'Worked in the secondary control room, operating a Blackmagic Design ATEM video switcher',
-			},
-		],
-	},
-	{
-		id: 'brtf-sports',
-		displayTitle: 'Niagara College BRTF Sports',
-		title: 'Niagara College BRTF Sports',
-		subtitle: 'Soccer, Basketball, Volleyball, Hockey',
-		when: '2018-2020',
-		roles: [
-			{
-				title: 'Replay/Playback',
-				description:
-					'Monitored live feeds and identified important plays, worked with on-air talent to provide instant replays for requested events, played pre-recorded intros and commercials during the broadcast',
-			},
-			{
-				title: 'Technical Director',
-				description:
-					'Used a Ross Video Carbonite Black production switcher, worked in a remote-control room following director’s queues',
-			},
-			{
-				title: 'Director',
-				description:
-					'Watched multiple live feeds to make decisions on the look of the show from camera angles to the use of graphics and sound ',
-			},
-			{
-				title: 'Graphics Operator',
-				description:
-					'Created a program to control the Ross Video Xpression Graphics System for an ease-of-use visual graphics controller to update scores, game clocks, player lower-thirds, and live sports visual elements',
-			},
-			{
-				title: 'CCU',
-				description:
-					'Managed the iris levels and colouring of up to 4 cameras at a time in both indoor and outdoor settings',
-			},
-		],
-	},
+  {
+    id: "virtual-niagara-day",
+    displayTitle: "Virtual Niagara Day 2020",
+    title:
+      '<a rel="noopener noreferrer" href="https://www.niagaracollege.ca/insidenc/2020/10/23/niagara-day-what-to-expect-and-how-to-access-the-oct-28-remote-celebration/" target="_blank">Virtual Niagara Day 2020</a>',
+    subtitle: "Niagara College ",
+    when: "October 28, 2020",
+    roles: [
+      {
+        title: "Media Director",
+        description:
+          "Used the CasperCG system to play back pre-recorded faculty and award videos, managed multiple live remote crews surprising award winners at their houses using Discord Video Calls to transmit the feeds back to the control room",
+      },
+    ],
+  },
+  {
+    id: "spring-fall-convocation",
+    displayTitle: "Niagara College Convocation",
+    title:
+      '<a rel="noopener noreferrer" href="https://www.niagaracollege.ca/virtualconvocation/" target="_blank">Niagara College Convocation</a>',
+    subtitle: "Spring & Fall Ceremonies",
+    when: "June & October 2020",
+    roles: [
+      {
+        title: "Media Director",
+        description:
+          "Managed live playback of pre-recorded video elements for over an hour of content per show",
+      },
+      {
+        title: "Name Readings",
+        description:
+          '<a rel="noopener noreferrer" href="https://github.com/ReadySetLinq/convocation-controller/tree/dev" target="_blank">created a program</a> to display students’ names by academic course which was used to record voice-over name readings for over 10,000 graduates',
+      },
+      {
+        title: "Pre-Production",
+        description:
+          "Assisted in building show sets, built a remote production studio",
+      },
+    ],
+  },
+  {
+    id: "music-niagara-festival",
+    displayTitle: "Music Niagara Festival 2020",
+    title:
+      '<a rel="noopener noreferrer" href="https://www.musicniagara.org/concerts/steve-mcdade/" target="_blank">Music Niagara Festival 2020</a>',
+    subtitle: "Steve McDade",
+    when: "October 2020",
+    roles: [
+      {
+        title: "Technical Producer",
+        description:
+          "Set-up outdoor broadcast control area to film a multi-camera music production, set up cameras and microphones to capture all angles and sounds of various string instruments",
+      },
+      {
+        title: "Technical Director",
+        description:
+          "Operated a stream deck to control the Blackmagic Design ATEM video switcher, followed director’s queues to match musical beats to live camera changes following the story of the song",
+      },
+    ],
+  },
+  {
+    id: "2020-summer-games",
+    displayTitle: "Canadian Olympic Wrestling Trials",
+    title:
+      '<a rel="noopener noreferrer" href="https://www.niagaracollege.ca/insidenc/2019/12/02/brtf-students-undertake-filming-of-olympic-wrestling-trials/" target="_blank">Canadian Olympic Wrestling Trials</a>',
+    subtitle: "2020 Summer Games",
+    when: "December 5-7th 2019",
+    roles: [
+      {
+        title: "Graphics Operator",
+        description:
+          "Created athlete profiles in Photoshop for all competitors in the finals, used the Ross Video Xpression system to display these live profiles for the broadcast and in-house video wall",
+      },
+      {
+        title: "Technical Director",
+        description:
+          "Worked in the secondary control room, operating a Blackmagic Design ATEM video switcher",
+      },
+    ],
+  },
+  {
+    id: "brtf-sports",
+    displayTitle: "Niagara College BRTF Sports",
+    title: "Niagara College BRTF Sports",
+    subtitle: "Soccer, Basketball, Volleyball, Hockey",
+    when: "2018-2020",
+    roles: [
+      {
+        title: "Replay/Playback",
+        description:
+          "Monitored live feeds and identified important plays, worked with on-air talent to provide instant replays for requested events, played pre-recorded intros and commercials during the broadcast",
+      },
+      {
+        title: "Technical Director",
+        description:
+          "Used a Ross Video Carbonite Black production switcher, worked in a remote-control room following director’s queues",
+      },
+      {
+        title: "Director",
+        description:
+          "Watched multiple live feeds to make decisions on the look of the show from camera angles to the use of graphics and sound ",
+      },
+      {
+        title: "Graphics Operator",
+        description:
+          "Created a program to control the Ross Video Xpression Graphics System for an ease-of-use visual graphics controller to update scores, game clocks, player lower-thirds, and live sports visual elements",
+      },
+      {
+        title: "CCU",
+        description:
+          "Managed the iris levels and colouring of up to 4 cameras at a time in both indoor and outdoor settings",
+      },
+    ],
+  },
 ];
 
 const coding = [
@@ -134,8 +137,8 @@ const coding = [
 ];
 
 const experience = {
-	production,
-	coding,
+  production,
+  coding,
 };
 
 export { production, coding };
