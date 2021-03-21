@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css';
+import '../lightbox.css';
 
 const LightBox = (props) => {
 	const [state, setState] = useState({
