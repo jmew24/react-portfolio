@@ -545,6 +545,35 @@ nav > a.mobile-btn {
 	font-weight: bold;
 }
 
+/* certifications */
+.certification-title {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.certification-item {
+	margin-bottom: 15px;
+}
+
+.certification-item {
+	margin-bottom: 15px;
+}
+
+.certification-badges {
+	margin: 24px 0;
+	padding: 0;
+}
+.certification-badges li {
+	display: inline-block;
+	margin: 0 15px;
+	padding: 0;
+}
+
+.certification-badge-img {
+	width: 165px;
+	height: auto;
+}
+
 /* skills */
 .skill {
 	border-bottom: 1px solid #e8e8e8;
