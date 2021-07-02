@@ -36,6 +36,11 @@ const HeaderPage = () => {
 							Experience
 						</a>
 					</li>
+					<li className='nav-list-item' id='nav-certifications'>
+						<a className='smoothscroll' href='#certifications'>
+							Certifications
+						</a>
+					</li>
 					<li className='nav-list-item' id='nav-skills'>
 						<a className='smoothscroll' href='#skills'>
 							Skills

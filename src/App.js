@@ -5,6 +5,7 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import About from './Components/About';
 import Experience from './Components/Experience';
+import Certifications from './Components/Certifications';
 import Skills from './Components/Skills';
 import Education from './Components/Education';
 import Gallery from './Components/Gallery';
@@ -25,6 +26,7 @@ const AppPage = () => {
 			<About />
 			<section className='main'>
 				<Experience />
+				<Certifications />
 				<Skills />
 				<Education />
 			</section>
