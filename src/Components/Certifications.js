@@ -54,7 +54,7 @@ const CertificationsPage = () => {
 
 	return (
 		<section className='certifications' id='certifications'>
-			<div className='row work'>
+			<div className='row certifications'>
 				<div className='four columns header-col'>
 					<h1>
 						<span>Production Certifications</span>
