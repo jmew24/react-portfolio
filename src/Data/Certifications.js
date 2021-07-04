@@ -6,6 +6,10 @@ const production = [
 		link: './certifications/prime_badges.pdf',
 		badges: [
 			{
+				title: 'PRIME Blue Belt',
+				image: './certifications/chyron/Certification_38615.png',
+			},
+			{
 				title: 'PRIME Green Belt',
 				image: './certifications/chyron/Certification_38442.png',
 			},
