@@ -33,16 +33,13 @@ const CertificationsPage = () => {
 						<span className='item-wrap'>
 							<ul className='certification-badges'>
 								{certification?.badges.map((badge) => {
-									return (
+									return badge ? (
 										<>
-											<li
-												className='badge'
-												key={`certification-${certification.id}-badge-${badge.title.toLowerCase().replace(' ', '_')}`}
-											>
+											<li className='badge' key={`certification-badge-${badge.id}`}>
 												<img className='certification-badge-img' src={`images/${badge.image}`} alt={badge.title} />
 											</li>
 										</>
-									);
+									) : null;
 								})}
 							</ul>
 						</span>
