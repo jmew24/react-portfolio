@@ -5,7 +5,7 @@ const production = [
 		images: [],
 	},
 	{
-		id: 'spring-fall-convocation',
+		id: 'spring-fall-convocation-2020',
 		title: 'Convocation 2020',
 		images: [
 			{
