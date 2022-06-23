@@ -1,5 +1,19 @@
 const production = [
 	{
+		id: 'rogers-sportsnet-chyron',
+		displayTitle: 'Sportsnet',
+		title: '<a rel="noopener noreferrer" href="https://www.sportsnet.ca/" target="_blank">Sportsnet</a>',
+		subtitle: 'Rogers Sports & Media - Sportsnet Network',
+		when: 'September 2021-present',
+		roles: [
+			{
+				title: 'Electronic Graphics Operator - Chyron',
+				description:
+					'Built and outputted custom boards and graphics for shows including Late Central, and Blue Jays Central',
+			},
+		],
+	},
+	{
 		id: 'spring-convocation-2021',
 		displayTitle: 'Niagara College Convocation 2021',
 		title:

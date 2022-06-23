@@ -1,5 +1,10 @@
 const production = [
 	{
+		id: 'rogers-sportsnet-chyron',
+		title: 'Sportsnet - Chyron',
+		images: [],
+	},
+	{
 		id: '2020-summer-games',
 		title: 'Canadian Olympic Wrestling Trials',
 		images: [],
