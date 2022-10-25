@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
 import general from '../Data/General';
+import { useOnScreen } from '../Hooks/useOnScreen';
 
-const AboutPage = () => {
+const pageId = 'about';
+
+const AboutPage = ({ setHighlight }) => {
+	const pageRef = useRef();
+	const isPageOnScreen = useOnScreen(pageRef, 0.3);
+
+	useEffect(() => {
+		if (isPageOnScreen) {
+			setHighlight(pageId);
+		}
+	}, [isPageOnScreen, setHighlight]);
+
 	return (
-		<section className='about' id='about'>
+		<section ref={pageRef} className='about' id={pageId}>
 			<div className='row'>
 				<div className='three columns'>
 					<img className='profile-pic' src={`images/${general.main.image}`} alt='Profile Pic' />

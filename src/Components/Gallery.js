@@ -1,9 +1,21 @@
-import React, { useMemo } from 'react';
+import React, { useRef, useEffect, useMemo } from 'react';
 import LightBox from './LightBox';
 
 import gallery from '../Data/Gallery';
+import { useOnScreen } from '../Hooks/useOnScreen';
 
-const GalleryPage = () => {
+const pageId = 'gallery';
+
+const GalleryPage = ({ setHighlight }) => {
+	const pageRef = useRef(null);
+	const isPageOnScreen = useOnScreen(pageRef);
+
+	useEffect(() => {
+		if (isPageOnScreen) {
+			setHighlight(pageId);
+		}
+	}, [isPageOnScreen, setHighlight]);
+
 	const productionGallery = useMemo(
 		() =>
 			gallery.production.map((gallery) => {
@@ -60,7 +72,7 @@ const GalleryPage = () => {
 	);
 
 	return productionGallery.length > 0 || codingGallery.length > 0 ? (
-		<div className='row' id='gallery'>
+		<div ref={pageRef} className='row' id={pageId}>
 			<div className='twelve columns collapsed'>
 				<h1>Check Out My Photo Gallery</h1>
 

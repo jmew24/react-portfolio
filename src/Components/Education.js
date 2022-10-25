@@ -1,8 +1,20 @@
-import React, { useMemo } from 'react';
+import React, { useRef, useEffect, useMemo } from 'react';
 
 import education from '../Data/Education';
+import { useOnScreen } from '../Hooks/useOnScreen';
 
-const EducationPage = () => {
+const pageId = 'education';
+
+const EducationPage = ({ setHighlight }) => {
+	const pageRef = useRef();
+	const isPageOnScreen = useOnScreen(pageRef);
+
+	useEffect(() => {
+		if (isPageOnScreen) {
+			setHighlight(pageId);
+		}
+	}, [isPageOnScreen, setHighlight]);
+
 	const educationData = useMemo(
 		() =>
 			education.map((education) => {
@@ -25,7 +37,7 @@ const EducationPage = () => {
 	);
 
 	return (
-		<section id='education'>
+		<section ref={pageRef} id={pageId}>
 			<div className='row education'>
 				<div className='four columns header-col'>
 					<h1>

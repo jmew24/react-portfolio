@@ -20,7 +20,6 @@ jQuery(document).ready(function ($) {
 	const id_Change = new CustomEvent('id_change', {
 		detail: { id: () => window.current_id },
 	});
-	let isScrolling = false;
 	let active_id = null;
 	let last_id = null;
 
@@ -45,7 +44,6 @@ jQuery(document).ready(function ($) {
 				_offset = 100;
 		}
 
-		isScrolling = true;
 		if (active_id !== 'gallery') last_id = active_id;
 		window.current_id = _id;
 		window.dispatchEvent(id_Change);
@@ -66,7 +64,6 @@ jQuery(document).ready(function ($) {
 						navigation_links.parent().removeClass('current');
 						active_link.classList.add('current');
 					}
-					isScrolling = false;
 				},
 			);
 	});
@@ -74,39 +71,7 @@ jQuery(document).ready(function ($) {
 	/*----------------------------------------------------*/
 	/* Highlight the current section in the navigation bar
 ------------------------------------------------------*/
-
 	const navigation_links = $('nav a');
-	const config = {
-		root: null,
-		rootMargin: '-96px 0px -48% 0px',
-		threshold: 0.2,
-	};
-	const callback = (entries) => {
-		if (isScrolling) return;
-		entries.forEach((entry) => {
-			let element = null,
-				active_link = null;
-
-			if (isScrolling) return;
-
-			if (entry.isIntersecting) {
-				element = entry.target;
-				if (element != null && element.id !== undefined && element.id !== active_id) {
-					active_link = document.getElementById(`nav-${element.id}`);
-					if (active_link !== undefined && active_link !== null) {
-						active_id = element.id;
-						navigation_links.parent().removeClass('current');
-						active_link.classList.add('current');
-					}
-				}
-			}
-		});
-	};
-	const observer = new IntersectionObserver(callback, config);
-
-	document.querySelectorAll('section').forEach((section) => {
-		observer.observe(section);
-	});
 
 	/*----------------------------------------------------*/
 	/*	Make sure that #header-background-image height is
@@ -126,8 +91,6 @@ jQuery(document).ready(function ($) {
 	$(window).on('scroll', function () {
 		const h = $('header').height();
 		const y = $(window).scrollTop();
-		const wh = $(window).height();
-		const dh = $(document).height();
 		const nav = $('nav');
 
 		if (y > h * 0.2 && y + 40 < h && $(window).outerWidth() > 768) {
@@ -137,24 +100,6 @@ jQuery(document).ready(function ($) {
 				nav.removeClass('opaque').fadeIn('fast');
 			} else {
 				nav.addClass('opaque').fadeIn('fast');
-			}
-
-			if (y < h * 0.2) {
-				const element = document.getElementById('home');
-				const active_link = document.getElementById(`nav-home`);
-				if (element !== undefined && element.id !== active_id && active_link !== undefined && active_link !== null) {
-					active_id = element.id;
-					navigation_links.parent().removeClass('current');
-					active_link.classList.add('current');
-				}
-			} else if (y + wh === dh) {
-				const element = document.getElementById('gallery');
-				const active_link = document.getElementById(`nav-gallery`);
-				if (element !== null && element.id !== active_id && active_link !== undefined && active_link !== null) {
-					active_id = element.id;
-					navigation_links.parent().removeClass('current');
-					active_link.classList.add('current');
-				}
 			}
 		}
 	});

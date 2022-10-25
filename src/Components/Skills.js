@@ -1,8 +1,20 @@
-import React, { useMemo } from 'react';
+import React, { useRef, useEffect, useMemo } from 'react';
 
 import skills from '../Data/Skills';
+import { useOnScreen } from '../Hooks/useOnScreen';
 
-const SkillsPage = () => {
+const pageId = 'skills';
+
+const SkillsPage = ({ setHighlight }) => {
+	const pageRef = useRef();
+	const isPageOnScreen = useOnScreen(pageRef);
+
+	useEffect(() => {
+		if (isPageOnScreen) {
+			setHighlight(pageId);
+		}
+	}, [isPageOnScreen, setHighlight]);
+
 	const productionSkills = useMemo(
 		() =>
 			skills.production.list.map((skill, index) => {
@@ -40,7 +52,7 @@ const SkillsPage = () => {
 	);
 
 	return (
-		<section id='skills'>
+		<section ref={pageRef} id={pageId}>
 			<div className='row skill'>
 				<div className='four columns header-col'>
 					<h1>

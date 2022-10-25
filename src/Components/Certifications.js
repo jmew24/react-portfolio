@@ -1,8 +1,20 @@
-import React, { useMemo } from 'react';
+import React, { useRef, useEffect, useMemo } from 'react';
 
 import certifications from '../Data/Certifications';
+import { useOnScreen } from '../Hooks/useOnScreen';
 
-const CertificationsPage = () => {
+const pageId = 'certifications';
+
+const CertificationsPage = ({ setHighlight }) => {
+	const pageRef = useRef();
+	const isPageOnScreen = useOnScreen(pageRef);
+
+	useEffect(() => {
+		if (isPageOnScreen) {
+			setHighlight(pageId);
+		}
+	}, [isPageOnScreen, setHighlight]);
+
 	const productionCertifications = useMemo(
 		() =>
 			certifications.production.map((certification, index) => {
@@ -48,7 +60,7 @@ const CertificationsPage = () => {
 	);
 
 	return (
-		<section className='certifications' id='certifications'>
+		<section ref={pageRef} className='certifications' id={pageId}>
 			<div className='row certifications'>
 				<div className='four columns header-col'>
 					<h1>
