@@ -9,7 +9,80 @@ const production = [
 			{
 				title: 'Electronic Graphics Operator - Chyron',
 				description:
-					'Built and outputted custom boards and graphics for shows including Late Central, and Blue Jays Central',
+					'Built and played-out custom full-screen boards and graphics for shows including MLB Post-Season Central, Blue Jays Central, and Late Central.',
+			},
+		],
+	},
+	{
+		id: '2022-canada-summer-games',
+		displayTitle: 'Diving, Etobicoke Olympium',
+		title:
+			'<a rel="noopener noreferrer" href="https://niagara2022games.ca/watch/sport/diving" target="_blank">Diving, Etobicoke Olympium</a>',
+		subtitle: 'Niagara 2022 Summer Games',
+		when: 'August 16-18th 2022',
+		roles: [
+			{
+				title: 'Director',
+				description:
+					'Directed the use of four robotic cameras to capture the best angles of the diving competition. Also ',
+			},
+			{
+				title: 'Technical Director',
+				description:
+					'Operated a Blackmagic Design ATEM video switcher to change camera angles during the live broadcast. Setup the control room consiting of a video switcher, live-stream and graphics station and robotic camera control base in the Etobicoke Olympium.',
+			},
+		],
+	},
+	{
+		id: '2020-summer-olympics',
+		displayTitle: 'Canadian Olympic Wrestling Trials',
+		title:
+			'<a rel="noopener noreferrer" href="https://www.niagaracollege.ca/insidenc/2019/12/02/brtf-students-undertake-filming-of-olympic-wrestling-trials/" target="_blank">Canadian Olympic Wrestling Trials</a>',
+		subtitle: 'Olympic Games Tokyo 2020',
+		when: 'December 5-7th 2019',
+		roles: [
+			{
+				title: 'Graphics Operator',
+				description:
+					'Created athlete profiles in Photoshop for all competitors in the finals, used the Ross Video Xpression system to display these live profiles for the broadcast and in-house video wall',
+			},
+			{
+				title: 'Technical Director',
+				description: 'Worked in the secondary control room, operating a Blackmagic Design ATEM video switcher',
+			},
+		],
+	},
+	{
+		id: 'brtf-sports',
+		displayTitle: 'Niagara College BRTF Sports',
+		title: 'Niagara College BRTF Sports',
+		subtitle: 'Soccer, Basketball, Volleyball, Hockey',
+		when: '2018-2020',
+		roles: [
+			{
+				title: 'Replay/Playback',
+				description:
+					'Monitored live feeds and identified important plays, worked with on-air talent to provide instant replays for requested events, played pre-recorded intros and commercials during the broadcast',
+			},
+			{
+				title: 'Technical Director',
+				description:
+					'Used a Ross Video Carbonite Black production switcher, worked in a remote-control room following director’s queues',
+			},
+			{
+				title: 'Director',
+				description:
+					'Watched multiple live feeds to make decisions on the look of the show from camera angles to the use of graphics and audio.',
+			},
+			{
+				title: 'Graphics Operator',
+				description:
+					'Created a program to control the Ross Video Xpression Graphics System for an ease-of-use visual graphics controller to update scores, game clocks, player lower-thirds, and live sports visual elements',
+			},
+			{
+				title: 'CCU',
+				description:
+					'Managed the iris levels and colouring of up to 4 cameras at a time in both indoor and outdoor settings',
 			},
 		],
 	},
@@ -93,59 +166,6 @@ const production = [
 				title: 'Technical Director',
 				description:
 					'Operated a stream deck to control the Blackmagic Design ATEM video switcher, followed director’s queues to match musical beats to live camera changes following the story of the song',
-			},
-		],
-	},
-	{
-		id: '2020-summer-games',
-		displayTitle: 'Canadian Olympic Wrestling Trials',
-		title:
-			'<a rel="noopener noreferrer" href="https://www.niagaracollege.ca/insidenc/2019/12/02/brtf-students-undertake-filming-of-olympic-wrestling-trials/" target="_blank">Canadian Olympic Wrestling Trials</a>',
-		subtitle: '2020 Summer Games',
-		when: 'December 5-7th 2019',
-		roles: [
-			{
-				title: 'Graphics Operator',
-				description:
-					'Created athlete profiles in Photoshop for all competitors in the finals, used the Ross Video Xpression system to display these live profiles for the broadcast and in-house video wall',
-			},
-			{
-				title: 'Technical Director',
-				description: 'Worked in the secondary control room, operating a Blackmagic Design ATEM video switcher',
-			},
-		],
-	},
-	{
-		id: 'brtf-sports',
-		displayTitle: 'Niagara College BRTF Sports',
-		title: 'Niagara College BRTF Sports',
-		subtitle: 'Soccer, Basketball, Volleyball, Hockey',
-		when: '2018-2020',
-		roles: [
-			{
-				title: 'Replay/Playback',
-				description:
-					'Monitored live feeds and identified important plays, worked with on-air talent to provide instant replays for requested events, played pre-recorded intros and commercials during the broadcast',
-			},
-			{
-				title: 'Technical Director',
-				description:
-					'Used a Ross Video Carbonite Black production switcher, worked in a remote-control room following director’s queues',
-			},
-			{
-				title: 'Director',
-				description:
-					'Watched multiple live feeds to make decisions on the look of the show from camera angles to the use of graphics and sound ',
-			},
-			{
-				title: 'Graphics Operator',
-				description:
-					'Created a program to control the Ross Video Xpression Graphics System for an ease-of-use visual graphics controller to update scores, game clocks, player lower-thirds, and live sports visual elements',
-			},
-			{
-				title: 'CCU',
-				description:
-					'Managed the iris levels and colouring of up to 4 cameras at a time in both indoor and outdoor settings',
 			},
 		],
 	},
