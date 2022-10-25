@@ -1,31 +1,20 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
-import general from '../Data/General';
+import { main } from '../Data/General';
+import { SocialList } from '../Factories/SocialList';
 
 const FooterPage = () => {
-	const networks = useMemo(
-		() =>
-			general.social.map((network) => {
-				return (
-					<li key={network.name}>
-						<a href={network.url}>
-							<i className={network.className}></i>
-						</a>
-					</li>
-				);
-			}),
-		[],
-	);
+	const socials = SocialList();
 
 	return (
 		<footer>
 			<div className='row'>
 				<div className='twelve columns'>
-					<ul className='social-links'>{networks}</ul>
+					<ul className='social-links'>{socials}</ul>
 
 					<ul className='copyright'>
 						<li>
-							&copy; Copyright {general.main.year} {general.main.name}
+							&copy; Copyright {main.year} {main.name}
 						</li>
 						<li>
 							Design by{' '}

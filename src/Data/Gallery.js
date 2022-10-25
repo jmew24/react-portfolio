@@ -1,6 +1,16 @@
 const production = [
 	{
-		id: '2020-summer-games',
+		id: 'rogers-sportsnet-chyron',
+		title: 'Sportsnet - Chyron',
+		images: [],
+	},
+	{
+		id: '2022-canada-summer-games',
+		title: 'Diving, Etobicoke Olympium',
+		images: [],
+	},
+	{
+		id: '2020-summer-olympics',
 		title: 'Canadian Olympic Wrestling Trials',
 		images: [],
 	},
