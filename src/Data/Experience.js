@@ -176,7 +176,7 @@ const coding = [
 		id: 'hitbox-entertainment-gmbh-2020',
 		title: 'Hitbox Entertainment GmbH',
 		subtitle: 'Software Engineer',
-		when: 'November 2020-Present',
+		when: 'November 2020-July 2022',
 		roles: [],
 		description:
 			'Created frontend solutions for administration and user management tools using <a rel="noopener noreferrer" href="https://reactjs.org/" target="_blank">ReactJS</a> and <a rel="noopener noreferrer" href="https://marmelab.com/react-admin/" target="_blank">ReactAdmin</a>. Worked on the backend to write secure <a rel="noopener noreferrer" href="https://graphql.org/" target="_blank">GraphQL</a> queries and mutations for managing user accounts using <a rel="noopener noreferrer" href="https://nestjs.com/" target="_blank">NestJS</a>.',

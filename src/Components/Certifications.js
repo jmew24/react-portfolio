@@ -5,10 +5,10 @@ import certifications from '../Data/Certifications';
 const CertificationsPage = () => {
 	const productionCertifications = useMemo(
 		() =>
-			certifications.production.map((certification) => {
+			certifications.production.map((certification, index) => {
 				const viewLink =
 					certification?.hasOwnProperty('link') && certification?.link.toString().trim() !== '' ? (
-						<span key={`certification-link-${certification.id}`}>
+						<span key={`certification-link-${certification.id}-${index}`}>
 							<a
 								rel='noopener noreferrer'
 								href={certification.link}
@@ -23,7 +23,7 @@ const CertificationsPage = () => {
 
 				return (
 					<div
-						key={`certification-${certification.id}`}
+						key={`certification-${certification.id}-${index}`}
 						id={`certification-${certification.id}`}
 						className='certification-item'
 					>
@@ -32,13 +32,11 @@ const CertificationsPage = () => {
 
 						<span className='item-wrap'>
 							<ul className='certification-badges'>
-								{certification?.badges.map((badge) => {
+								{certification?.badges.map((badge, index) => {
 									return badge ? (
-										<>
-											<li className='badge' key={`certification-badge-${badge.id}`}>
-												<img className='certification-badge-img' src={`images/${badge.image}`} alt={badge.title} />
-											</li>
-										</>
+										<li className='badge' key={`certification-badge-${badge.id}-${index}`}>
+											<img className='certification-badge-img' src={`images/${badge.image}`} alt={badge.title} />
+										</li>
 									) : null;
 								})}
 							</ul>
