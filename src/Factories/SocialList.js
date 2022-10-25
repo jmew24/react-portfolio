@@ -1,9 +1,7 @@
-import { social } from '../Data/General';
-
-export const SocialList = () => {
-	social.map((network) => {
+export const SocialList = ({ socials }) => {
+	return socials.map((network, index) => {
 		return (
-			<li key={network.name}>
+			<li key={`${network.name}-${index}`}>
 				<a href={network.url}>
 					<i className={network.className}></i>
 				</a>

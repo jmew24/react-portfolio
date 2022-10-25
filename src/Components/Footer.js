@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { main } from '../Data/General';
+import { social, main } from '../Data/General';
 import { SocialList } from '../Factories/SocialList';
 
 const FooterPage = () => {
-	const socials = SocialList();
-
 	return (
 		<footer>
 			<div className='row'>
 				<div className='twelve columns'>
-					<ul className='social-links'>{socials}</ul>
+					<ul className='social-links'>
+						<SocialList socials={social} />
+					</ul>
 
 					<ul className='copyright'>
 						<li>

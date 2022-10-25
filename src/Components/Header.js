@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { main, address } from '../Data/General';
+import { social, main, address } from '../Data/General';
 import { SocialList } from '../Factories/SocialList';
 
 const HeaderPage = () => {
-	const socials = SocialList();
-
 	return (
 		<header id='home'>
 			<nav id='nav-wrap'>
@@ -59,7 +57,9 @@ const HeaderPage = () => {
 						based and work in <span>{main.occupation}</span>. {main.description}.
 					</h3>
 					<hr />
-					<ul className='social'>{socials}</ul>
+					<ul className='social'>
+						<SocialList socials={social} />
+					</ul>
 				</div>
 			</div>
 
