@@ -1,8 +1,20 @@
-import React, { useMemo } from 'react';
+import React, { useRef, useEffect, useMemo } from 'react';
 
 import projects from '../Data/Projects';
+import { useOnScreen } from '../Hooks/useOnScreen';
 
-const ProjectsPage = () => {
+const pageId = 'projects';
+
+const ProjectsPage = ({ setHighlight }) => {
+	const pageRef = useRef(null);
+	const isPageOnScreen = useOnScreen(pageRef);
+
+	useEffect(() => {
+		if (isPageOnScreen) {
+			setHighlight(pageId);
+		}
+	}, [isPageOnScreen, setHighlight]);
+
 	const productionProjects = useMemo(
 		() =>
 			projects.production.map((project) => {
@@ -64,7 +76,7 @@ const ProjectsPage = () => {
 	);
 
 	return productionProjects.length > 0 || codingProjects.length > 0 ? (
-		<div className='row'>
+		<div ref={pageRef} className='row' id={pageId}>
 			<div className='twelve columns collapsed'>
 				<h1>Check Out Some of My Projects</h1>
 

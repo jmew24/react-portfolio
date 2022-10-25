@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
 import { social, main, address } from '../Data/General';
 import { SocialList } from '../Factories/SocialList';
+import { useOnScreen } from '../Hooks/useOnScreen';
 
-const HeaderPage = () => {
+const pageId = 'home';
+
+const HeaderPage = ({ setHighlight }) => {
+	const pageRef = useRef();
+	const isPageOnScreen = useOnScreen(pageRef, 0.2);
+
+	useEffect(() => {
+		if (isPageOnScreen) {
+			setHighlight(pageId);
+		}
+	}, [isPageOnScreen, setHighlight]);
+
 	return (
-		<header id='home'>
+		<header ref={pageRef} id={pageId}>
 			<nav id='nav-wrap'>
 				<ul id='nav' className='nav-list'>
 					<li className='nav-list-item current' id='nav-home'>
