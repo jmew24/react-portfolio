@@ -1,10 +1,10 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
-import { social, main } from '../Data/General';
+import { main } from '../Data/General';
 import { SocialList } from '../Factories/SocialList';
 
 const FooterPage = () => {
-	const socials = useMemo(() => SocialList(social), []);
+	const socials = SocialList();
 
 	return (
 		<footer>

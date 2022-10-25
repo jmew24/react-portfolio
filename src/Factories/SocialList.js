@@ -1,5 +1,7 @@
-export const SocialList = ({ socials }) => {
-	socials.map((network) => {
+import { social } from '../Data/General';
+
+export const SocialList = () => {
+	social.map((network) => {
 		return (
 			<li key={network.name}>
 				<a href={network.url}>

@@ -1,10 +1,10 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
-import { social, main, address } from '../Data/General';
+import { main, address } from '../Data/General';
 import { SocialList } from '../Factories/SocialList';
 
 const HeaderPage = () => {
-	const socials = useMemo(() => SocialList(social), []);
+	const socials = SocialList();
 
 	return (
 		<header id='home'>
