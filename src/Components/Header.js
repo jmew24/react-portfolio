@@ -1,21 +1,10 @@
 import React, { useMemo } from 'react';
 
-import general from '../Data/General';
+import { social, main, address } from '../Data/General';
+import { SocialList } from '../Factories/SocialList';
 
 const HeaderPage = () => {
-	const networks = useMemo(
-		() =>
-			general.social.map((network) => {
-				return (
-					<li key={network.name}>
-						<a href={network.url}>
-							<i className={network.className}></i>
-						</a>
-					</li>
-				);
-			}),
-		[],
-	);
+	const socials = useMemo(() => SocialList(social), []);
 
 	return (
 		<header id='home'>
@@ -61,16 +50,16 @@ const HeaderPage = () => {
 
 			<div className='row banner'>
 				<div className='banner-text'>
-					<h1 className='responsive-headline'>I'm {general.main.name}.</h1>
+					<h1 className='responsive-headline'>I'm {main.name}.</h1>
 					<h3>
 						I'm{' '}
 						<span>
-							{general.address.province} {general.address.country}
+							{address.province} {address.country}
 						</span>{' '}
-						based and work in <span>{general.main.occupation}</span>. {general.main.description}.
+						based and work in <span>{main.occupation}</span>. {main.description}.
 					</h3>
 					<hr />
-					<ul className='social'>{networks}</ul>
+					<ul className='social'>{socials}</ul>
 				</div>
 			</div>
 
