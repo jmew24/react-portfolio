@@ -56,11 +56,13 @@ const EducationPage = ({ setHighlight }) => {
 	if (!educationData?.items?.length) return null;
 
 	return (
-		<section ref={pageRef} id={pageId}>
-			<div className='row education'>
-				<div className='twelve columns collapsed'>
-					<h1>Check Out My Education</h1>
-					<div className='education-content'>
+		<section ref={pageRef} id={pageId} className="education">
+			<div className="row">
+				<div className="four columns header-col">
+					<h1><span>EDUCATION</span></h1>
+				</div>
+				<div className="eight columns main-col">
+					<div className="education-content">
 						{educationData.items.map((education) => (
 							<EducationItem key={education.id} education={education} />
 						))}

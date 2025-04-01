@@ -6,6 +6,18 @@ body {
   background: #0f0f0f;
 }
 
+/* Add base styles for html and #root to ensure full coverage */
+html,
+#root {
+  background: #0f0f0f;
+  min-height: 100%;
+}
+
+/* Ensure all main sections have consistent dark backgrounds */
+section {
+  background: #1a1a1a;
+}
+
 /* ------------------------------------------------------------------ */
 /* b. Header Styles
 /* ------------------------------------------------------------------ */
@@ -140,7 +152,7 @@ header .scrolldown a:hover {
 }
 
 .opaque {
-  background-color: #333;
+  background-color: #1a1a1a;
 }
 
 /* hide toggle button */
@@ -196,7 +208,7 @@ ul#nav li.current a {
 /* ------------------------------------------------------------------ */
 
 #about {
-  background: #2B2B2B;
+  background: #1a1a1a;
   padding-top: 96px;
   padding-bottom: 66px;
   overflow: hidden;
@@ -204,12 +216,12 @@ ul#nav li.current a {
 
 #about a,
 #about a:visited {
-  color: #fff;
+  color: #11ABB0;
 }
 
 #about a:hover,
 #about a:focus {
-  color: #11ABB0;
+  color: #fff;
 }
 
 #about h2 {
@@ -220,7 +232,8 @@ ul#nav li.current a {
 
 #about p {
   line-height: 30px;
-  color: #7A7A7A;
+  color: #FFFFFF;
+  font-weight: 400;
 }
 
 #about .profile-pic {
@@ -264,7 +277,7 @@ ul#nav li.current a {
 /* ------------------------------------------------------------------ */
 
 #resume {
-  background: #fff;
+  background: #1a1a1a;
   padding-top: 90px;
   padding-bottom: 72px;
   overflow: hidden;
@@ -277,13 +290,14 @@ ul#nav li.current a {
 
 #resume a:hover,
 #resume a:focus {
-  color: #313131;
+  color: #fff;
 }
 
 #resume h1 {
   font: 18px/24px 'opensans-bold', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
+  color: #fff;
 }
 
 #resume h1 span {
@@ -307,14 +321,15 @@ ul#nav li.current a {
 .work {
   margin-bottom: 48px;
   padding-bottom: 24px;
-  border-bottom: 1px solid #E8E8E8;
+  border-bottom: 1px solid #333333;
 }
 
 #resume .info {
   font: 16px/24px 'librebaskerville-italic', serif;
-  color: #6E7881;
+  color: #FFFFFF;
   margin-bottom: 18px;
   margin-top: 9px;
+  font-weight: 400;
 }
 
 #resume .info span {
@@ -336,7 +351,7 @@ ul#nav li.current a {
 }
 
 .skills {
-  background: #fff;
+  background: #1a1a1a;
   padding-top: 90px;
   padding-bottom: 72px;
   overflow: hidden;
@@ -346,9 +361,8 @@ ul#nav li.current a {
   font: 18px/24px 'opensans-bold', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
-  display: inline-block;
-  color: #333;
-  margin-bottom: 15px;
+  color: #fff;
+  margin-bottom: 30px;
 }
 
 .skills h1 span {
@@ -370,7 +384,7 @@ ul#nav li.current a {
 }
 
 .skills-subtitle {
-  color: #95A3A3;
+  color: #FFFFFF;
   font: 16px/24px 'opensans-regular', sans-serif;
   margin-bottom: 30px;
 }
@@ -381,7 +395,7 @@ ul#nav li.current a {
 
 .skill-category h3 {
   font: 16px/24px 'opensans-bold', sans-serif;
-  color: #333;
+  color: #FFFFFF;
   margin-bottom: 10px;
   position: relative;
   padding-left: 20px;
@@ -397,10 +411,10 @@ ul#nav li.current a {
 }
 
 .skill-description {
-  color: #838C95;
+  color: #FFFFFF;
   font: 16px/24px 'opensans-regular', sans-serif;
-  margin-bottom: 5px;
-  padding-left: 20px;
+  margin: 0;
+  font-weight: 400;
 }
 
 .skill-level {
@@ -571,18 +585,18 @@ ul#nav li.current a {
 /* ------------------------------------------------------------------ */
 
 #portfolio {
-  background: #ebeeee;
+  background: #1a1a1a;
   padding-top: 90px;
   padding-bottom: 60px;
 }
 
 #portfolio h1 {
-  font: 18px/24px 'Open Sans', sans-serif;
+  font: 15px/24px 'opensans-semibold', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
   margin-bottom: 48px;
-  color: #95A3A3;
+  color: #fff;
 }
 
 .portfolio-wrapper {
@@ -615,7 +629,7 @@ ul#nav li.current a {
 }
 
 .portfolio-item .item-wrap {
-  background: #fff;
+  background: #2a2a2a;
   overflow: hidden;
   position: relative;
   -webkit-transition: all 0.3s ease-in-out;
@@ -701,39 +715,43 @@ ul#nav li.current a {
 /* popup modal */
 .popup-modal {
   max-width: 550px;
-  background: #fff;
+  background: #1a1a1a;
   position: relative;
   margin: 0 auto;
 }
 
 .popup-modal .description-box {
-  padding: 12px 36px 18px 36px;
+  padding: 30px;
+  background: #1a1a1a;
+  text-align: left;
 }
 
 .popup-modal .description-box h4 {
-  font: 15px/24px 'Open Sans', sans-serif;
+  font: 15px/24px 'opensans-bold', sans-serif;
   margin-bottom: 12px;
-  color: #111;
+  color: #fff;
 }
 
 .popup-modal .description-box p {
-  font: 14px/24px 'Open Sans', sans-serif;
-  color: #838C95;
+  font: 14px/24px 'opensans-regular', sans-serif;
+  color: #FFFFFF;
   margin-bottom: 12px;
+  font-weight: 400;
 }
 
 .popup-modal .description-box .categories {
   font: 11px/21px 'Open Sans', sans-serif;
-  color: #838C95;
+  color: #FFFFFF;
   text-transform: uppercase;
   letter-spacing: 2px;
   display: block;
   text-align: left;
+  font-weight: 400;
 }
 
 .popup-modal .link-box {
   padding: 18px 36px;
-  background: #111;
+  background: #2a2a2a;
   text-align: left;
 }
 
@@ -821,7 +839,7 @@ ul#nav li.current a {
 /* ------------------------------------------------------------------ */
 
 .experience {
-  background: #fff;
+  background: #1a1a1a;
   padding-top: 90px;
   padding-bottom: 72px;
   overflow: hidden;
@@ -831,7 +849,7 @@ ul#nav li.current a {
   font: 18px/24px 'opensans-bold', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
-  display: inline-block;
+  color: #fff;
 }
 
 .experience h1 span {
@@ -853,15 +871,16 @@ ul#nav li.current a {
 }
 
 .category-description {
-  color: #95A3A3;
+  color: #FFFFFF;
   font-size: 16px;
   line-height: 24px;
   margin-top: 12px;
+  font-weight: 400;
 }
 
 .experience-item {
   margin-bottom: 48px;
-  border-bottom: 1px solid #E8E8E8;
+  border-bottom: 1px solid #333333;
   padding-bottom: 24px;
 }
 
@@ -872,21 +891,24 @@ ul#nav li.current a {
 .experience-header h3 {
   font: 25px/30px 'opensans-bold', sans-serif;
   margin-bottom: 6px;
+  color: #fff;
 }
 
 .experience-header h3 a {
-  color: #313131;
+  color: #11ABB0;
   text-decoration: none;
 }
 
 .experience-header h3 a:hover {
-  color: #11ABB0;
+  color: #fff;
 }
 
 .experience-header .info {
   font: 16px/24px 'librebaskerville-italic', serif;
-  color: #6E7881;
+  color: #FFFFFF;
   margin-bottom: 18px;
+  margin-top: 9px;
+  font-weight: 400;
 }
 
 .experience-header .info .separator {
@@ -895,7 +917,8 @@ ul#nav li.current a {
 
 .experience-content {
   line-height: 1.75em;
-  color: #838C95;
+  color: #FFFFFF;
+  font-weight: 400;
 }
 
 .role-item {
@@ -904,12 +927,14 @@ ul#nav li.current a {
 
 .role-item h4 {
   font: 16px/24px 'opensans-bold', sans-serif;
-  color: #313131;
+  color: #fff;
   margin-bottom: 6px;
 }
 
 .role-item p {
+  color: #FFFFFF;
   margin-bottom: 12px;
+  font-weight: 400;
 }
 
 .technologies {
@@ -918,7 +943,7 @@ ul#nav li.current a {
 
 .technologies-title {
   font: 15px/24px 'opensans-bold', sans-serif;
-  color: #313131;
+  color: #fff;
   margin-right: 8px;
 }
 
@@ -929,9 +954,11 @@ ul#nav li.current a {
 .tech-list a {
   color: #11ABB0;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .tech-list a:hover {
+  color: #FFFFFF;
   text-decoration: underline;
 }
 
@@ -943,9 +970,11 @@ ul#nav li.current a {
   color: #11ABB0;
   text-decoration: none;
   font: 14px/21px 'opensans-bold', sans-serif;
+  font-weight: 500;
 }
 
 .gallery-link a:hover {
+  color: #FFFFFF;
   text-decoration: underline;
 }
 
@@ -958,7 +987,7 @@ ul#nav li.current a {
 .language-bar-wrapper {
   margin-bottom: 15px;
   width: 100%;
-  background-color: #f0f0f0;
+  background-color: #2a2a2a;
   border-radius: 6px;
   overflow: hidden;
   height: 42px;
@@ -1019,123 +1048,163 @@ ul#nav li.current a {
 }
 
 /* Certifications Section */
+.certifications {
+  background: #1a1a1a;
+  padding-top: 90px;
+  padding-bottom: 72px;
+  overflow: hidden;
+}
+
 .certifications h1 {
   font: 18px/24px 'opensans-bold', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
-  display: inline-block;
+  color: #fff;
+  margin-bottom: 30px;
 }
 
-.certifications h1 span {
-  border-bottom: none;
-  padding-bottom: 6px;
-  position: relative;
+.certifications h2 {
+  font: 24px/32px 'opensans-bold', sans-serif;
+  color: #fff;
+  margin-bottom: 15px;
 }
 
-.certifications h1 span::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 3px;
-  background: #11ABB0;
-  margin-top: 6px;
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-}
-
-.skills-section {
-  margin-bottom: 48px;
-}
-
-.skills-section h2 {
-  font: 18px/24px 'opensans-bold', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  display: inline-block;
-  color: #333;
-  margin-bottom: 4px;
-  position: relative;
-}
-
-.skills-section h2::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 3px;
-  background: #11ABB0;
-  margin-top: 4px;
-}
-
-.skills-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-top: 12px;
-}
-
-.skill-item {
-  margin-bottom: 0;
-  padding-left: 16px;
-  position: relative;
-}
-
-.skill-item::before {
-  content: "•";
-  color: #838C95;
-  position: absolute;
-  left: 0;
-  font-size: 16px;
-  line-height: 24px;
-}
-
-.skill-description {
-  color: #838C95;
+.certifications .subtitle {
+  color: #FFFFFF;
   font: 16px/24px 'opensans-regular', sans-serif;
-  margin: 0;
+  margin-bottom: 30px;
+  font-weight: 400;
 }
 
-/* Programming Languages subsection */
-.programming-languages {
-  margin-top: 32px;
-}
-
-.programming-languages h3 {
-  font: 16px/24px 'opensans-bold', sans-serif;
-  color: #333;
-  margin-bottom: 16px;
-}
-
-.languages-grid {
+.certification-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
 }
 
-.language-item {
-  background: #f8f8f8;
-  padding: 12px 16px;
-  border-radius: 4px;
+.certification-item {
+  background: transparent;
+  padding: 25px 0;
+  transition: transform 0.3s ease;
+  border-left: 4px solid transparent;
+  padding-left: 20px;
+}
+
+.certification-item:hover {
+  transform: translateY(-5px);
+}
+
+.certification-item h3,
+.certification-item .badge-title,
+.certification-item .title {
+  color: #FFFFFF;
+  font: 22px/30px 'opensans-bold', sans-serif;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.certification-item .badge-title a,
+.certification-item .title a {
+  color: #FFFFFF;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
-.language-item:hover {
-  background: #f0f0f0;
-  transform: translateX(4px);
-}
-
-.language-item a {
+.certification-item .badge-title a:hover,
+.certification-item .title a:hover {
   color: #11ABB0;
   text-decoration: none;
-  font: 15px/20px 'opensans-regular', sans-serif;
 }
 
-.language-item a:hover {
-  color: #0c8185;
+.certification-item .date,
+.certification-item .badge-date {
+  color: #B0C4DE;
+  /* Light Steel Blue */
+  font: 16px/24px 'opensans-semibold', sans-serif;
+  margin-bottom: 15px;
+  display: block;
+  letter-spacing: 0.3px;
 }
 
-/* Remove old styles */
-.skill-category,
-.skill-level {
-  display: none;
+.certification-item .date span,
+.certification-item .badge-date span {
+  color: #E0E0E0;
+  font-style: italic;
+}
+
+.certification-item .level {
+  color: #E0E0E0;
+  font: 16px/24px 'opensans-regular', sans-serif;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.certification-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.certification-item .description {
+  color: #FFFFFF;
+  font: 15px/22px 'opensans-regular', sans-serif;
+  margin-bottom: 15px;
+  letter-spacing: 0.3px;
+}
+
+.certification-item .view-link {
+  display: inline-block;
+  color: #11ABB0;
+  font: 14px/20px 'opensans-bold', sans-serif;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.certification-item .view-link:hover {
+  color: #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.certification-item a {
+  color: #11ABB0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.certification-item a:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* Belt colors */
+.certification-item.blue-belt {
+  border-left: 4px solid #11ABB0;
+}
+
+.certification-item.green-belt {
+  border-left: 4px solid #4CAF50;
+}
+
+.certification-item.yellow-belt {
+  border-left: 4px solid #FFC107;
+}
+
+.certification-item.white-belt {
+  border-left: 4px solid #E0E0E0;
+}
+
+/* Update link colors for better visibility */
+a {
+  color: #11ABB0;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #FFFFFF;
 }
