@@ -1021,21 +1021,16 @@ ul#nav li.current a {
 .languages-list {
   width: 100%;
   margin-top: 1.25em;
-  /* 20px */
   margin-bottom: 3em;
-  /* 48px */
 }
 
 .language-bar-wrapper {
-  margin-bottom: 0.9375em;
-  /* 15px */
+  margin-bottom: 0.625em;
   width: 100%;
   background-color: #2a2a2a;
-  border-radius: 0.375em;
-  /* 6px */
+  border-radius: 0.25em;
   overflow: hidden;
-  height: 2.625em;
-  /* 42px */
+  height: 2em;
 }
 
 .language-bar {
@@ -1043,17 +1038,15 @@ ul#nav li.current a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1.25em;
-  /* 20px */
+  padding: 0 0.75em;
   transition: all 0.3s ease-in-out;
 }
 
 .language-name {
   color: #fff;
   font-weight: 600;
-  font-size: 1.1em;
+  font-size: 0.9em;
   text-shadow: 0.0625em 0.0625em 0.125em rgba(0, 0, 0, 0.3);
-  /* 1px 1px 2px */
 }
 
 .language-name a {
@@ -1073,7 +1066,7 @@ ul#nav li.current a {
 
 .language-level {
   color: #fff;
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight: 500;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
@@ -1133,13 +1126,12 @@ ul#nav li.current a {
 .certification-item {
   background: transparent;
   padding: 25px 0;
-  transition: transform 0.3s ease;
   border-left: 4px solid transparent;
   padding-left: 20px;
 }
 
 .certification-item:hover {
-  transform: translateY(-5px);
+  /* transform effect removed */
 }
 
 .certification-item h3,
