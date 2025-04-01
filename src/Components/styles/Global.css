@@ -1,0 +1,24 @@
+/* Global Styles */
+body {
+  background: #0f0f0f;
+}
+
+html,
+#root {
+  background: #0f0f0f;
+  min-height: 100%;
+}
+
+section {
+  background: #1a1a1a;
+}
+
+/* Update link colors for better visibility */
+a {
+  color: #11ABB0;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #FFFFFF;
+}

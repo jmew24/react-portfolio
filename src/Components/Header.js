@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
+import './styles/Header.css';
 
 import general from '../Data/general.json';
 import { SocialList } from '../Factories/SocialList';

@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import './styles/Resume.css';
 
 import { education as educationData } from '../Data';
 import { useOnScreen } from '../Hooks/useOnScreen';

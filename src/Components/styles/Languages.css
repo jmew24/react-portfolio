@@ -1,0 +1,73 @@
+.languages-list {
+  width: 100%;
+  margin-top: 1.25em;
+  margin-bottom: 3em;
+  display: flex;
+  gap: 1em;
+  align-items: flex-end;
+  height: 12em;
+}
+
+.language-bar-wrapper {
+  flex: 1;
+  height: 100%;
+  background-color: #2a2a2a;
+  border-radius: 0.25em;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.language-bar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75em 0.5em;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.language-name {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9em;
+  text-shadow: 0.0625em 0.0625em 0.125em rgba(0, 0, 0, 0.3);
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  position: absolute;
+  bottom: 0.5em;
+  left: 50%;
+  transform-origin: center;
+  white-space: nowrap;
+}
+
+.language-level {
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: -1.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* Different colors and heights for different levels */
+.language-bar[data-level="Advanced"] {
+  background: linear-gradient(to top, #11ABB0, #0c8185);
+  height: 95%;
+}
+
+.language-bar[data-level="Intermediate"] {
+  background: linear-gradient(to top, #FFA726, #FB8C00);
+  height: 75%;
+}
+
+.language-bar[data-level="Beginner"] {
+  background: linear-gradient(to top, #78909C, #546E7A);
+  height: 55%;
+}

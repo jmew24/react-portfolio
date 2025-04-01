@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, memo } from 'react';
 import PropTypes from 'prop-types';
+import './styles/About.css';
 
 import general from '../Data/general.json';
 import { useOnScreen } from '../Hooks/useOnScreen';

@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import './styles/Portfolio.css';
 
 import { projects as projectsData } from '../Data';
 import { useOnScreen } from '../Hooks/useOnScreen';

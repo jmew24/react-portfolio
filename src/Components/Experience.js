@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import PropTypes from 'prop-types';
+import './styles/Experience.css';
 
 import { experience as experienceData, gallery } from "../Data";
 import { useOnScreen } from "../Hooks/useOnScreen";

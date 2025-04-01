@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
+import './styles/Certifications.css';
 
 import { certifications as certificationsData } from '../Data';
 import { useOnScreen } from '../Hooks/useOnScreen';

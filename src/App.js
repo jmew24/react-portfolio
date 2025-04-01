@@ -18,6 +18,7 @@ import { ThemeProvider } from './Context/ThemeContext';
 
 import resumeData from './Data';
 
+import './Components/styles/Global.css';
 import './App.css';
 
 const NAVIGATION = ['home', 'about', 'experience', 'certifications', 'skills', 'education', 'gallery'];

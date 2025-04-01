@@ -1,0 +1,220 @@
+#portfolio {
+  background: #1a1a1a;
+  padding-top: 0.25em;
+  padding-bottom: 1.5em;
+}
+
+#portfolio h1 {
+  font: 15px/24px 'opensans-semibold', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 48px;
+  color: #fff;
+}
+
+.portfolio-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.portfolio-item {
+  width: 25%;
+  position: relative;
+}
+
+.portfolio-item .item-wrap {
+  background: #2a2a2a;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio-item .item-wrap a {
+  display: block;
+  cursor: pointer;
+}
+
+.portfolio-item .item-wrap .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: rgba(17, 171, 176, 0.9);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.portfolio-item .item-wrap .link-icon {
+  display: block;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.portfolio-item .item-wrap img {
+  vertical-align: bottom;
+  width: 100%;
+  height: auto;
+  transition: all 0.3s ease-out;
+}
+
+.portfolio-item .item-wrap:hover .overlay {
+  opacity: 1;
+}
+
+.portfolio-item .item-wrap:hover .link-icon {
+  opacity: 1;
+}
+
+.portfolio-item .item-wrap:hover img {
+  transform: scale(1.2);
+}
+
+/* popup modal */
+.popup-modal {
+  max-width: 550px;
+  background: #1a1a1a;
+  position: relative;
+  margin: 0 auto;
+}
+
+.popup-modal .description-box {
+  padding: 30px;
+  background: #1a1a1a;
+  text-align: left;
+}
+
+.popup-modal .description-box h4 {
+  font: 15px/24px 'opensans-bold', sans-serif;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.popup-modal .description-box p {
+  font: 14px/24px 'opensans-regular', sans-serif;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.popup-modal .description-box .categories {
+  font: 11px/21px 'Open Sans', sans-serif;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  text-align: left;
+  font-weight: 400;
+}
+
+.popup-modal .link-box {
+  padding: 18px 36px;
+  background: #2a2a2a;
+  text-align: left;
+}
+
+.popup-modal .link-box a {
+  color: #fff;
+  font: 11px/21px 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+
+.popup-modal a:hover {
+  color: #00CCCC;
+}
+
+.popup-modal a.popup-modal-dismiss {
+  margin-left: 24px;
+}
+
+.image-counter {
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font: 14px/18px 'Open Sans', sans-serif;
+  background: rgba(0, 0, 0, 0.6);
+  margin: 0 10px;
+}
+
+/* Lightbox toolbar styles */
+:global(.yarl__toolbar) {
+  padding: 20px !important;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 100%) !important;
+}
+
+.lightbox-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1002;
+  color: #fff;
+  font-size: 24px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-button:hover {
+  opacity: 1;
+}
+
+.lightbox-button.prev {
+  left: 20px;
+}
+
+.lightbox-button.next {
+  right: 20px;
+}
+
+.lightbox-button i {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+@media only screen and (max-width: 900px) {
+  .portfolio-item {
+    width: 33.33%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .portfolio-item {
+    width: 50%;
+  }
+
+  #portfolio h1 {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 36px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .portfolio-item {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width:1024px) {
+  .popup-modal {
+    width: 85%;
+    margin: 0 auto;
+  }
+}

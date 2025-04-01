@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { skills as skillsData } from '../Data';
 import { useOnScreen } from '../Hooks/useOnScreen';
+import './styles/Skills.css';
 
 const pageId = 'skills';
 
