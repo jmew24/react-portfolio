@@ -68,9 +68,6 @@ const EducationPage = ({ setHighlight }) => {
 							<EducationItem key={education.id} education={education} />
 						))}
 					</div>
-					<p className='last-updated'>
-						Last updated: {educationData.metadata?.lastUpdated || 'N/A'}
-					</p>
 				</div>
 			</div>
 		</section>

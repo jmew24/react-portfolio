@@ -147,8 +147,7 @@ a:hover {
 }
 
 /* Global Date Styles */
-.date,
-.last-updated {
+.date {
   color: #B0C4DE;
   font-style: italic;
 }

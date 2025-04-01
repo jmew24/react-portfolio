@@ -22,3 +22,10 @@ a {
 a:hover {
   color: #FFFFFF;
 }
+
+.category-description {
+  color: rgb(255, 255, 255);
+  font: 16px/24px 'opensans-light', sans-serif;
+  margin-top: 12px;
+  font-weight: 400;
+}

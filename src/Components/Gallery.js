@@ -102,9 +102,6 @@ const GalleryPage = ({ setHighlight }) => {
 				{Object.keys(galleryData.categories).map(category => (
 					<GallerySection key={category} category={category} />
 				))}
-				<p className='last-updated'>
-					Last updated: {galleryData.metadata?.lastUpdated || 'N/A'}
-				</p>
 			</div>
 		</div>
 	);

@@ -38,8 +38,8 @@ LanguageItem.propTypes = {
 };
 
 const SkillSection = ({ title, description, children }) => (
-	<>
-		<div className='four columns header-col'>
+	<div className="skill-section">
+		<div className='header-col'>
 			<h1>
 				<span>{title}</span>
 			</h1>
@@ -47,14 +47,14 @@ const SkillSection = ({ title, description, children }) => (
 				<p className="category-description">{description}</p>
 			)}
 		</div>
-		<div className='eight columns main-col'>
+		<div className='main-col'>
 			<div className='row item'>
 				<div className='skills'>
 					{children}
 				</div>
 			</div>
 		</div>
-	</>
+	</div>
 );
 
 SkillSection.propTypes = {
@@ -137,7 +137,7 @@ const SkillsPage = React.memo(({ setHighlight }) => {
 
 	return (
 		<section ref={pageRef} id={pageId} aria-label="Skills Section">
-			<div className='row skill'>
+			<div className="row skill">
 				<SkillSection 
 					title={skillsData?.categories?.production?.title || 'Production Skills'}
 					description={skillsData?.categories?.production?.description}
@@ -161,9 +161,6 @@ const SkillsPage = React.memo(({ setHighlight }) => {
 					</div>
 				</SkillSection>
 			</div>
-			<p className="last-updated">
-				Last updated: {skillsData?.metadata?.lastUpdated || new Date().getFullYear()}
-			</p>
 		</section>
 	);
 });

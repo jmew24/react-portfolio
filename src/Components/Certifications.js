@@ -142,9 +142,6 @@ const CertificationsPage = ({ setHighlight }) => {
 					</div>
 				</div>
 			</div>
-			<p className='last-updated'>
-				Last updated: {certificationsData.metadata?.lastUpdated || 'N/A'}
-			</p>
 		</section>
 	);
 };

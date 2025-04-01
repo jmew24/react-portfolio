@@ -118,9 +118,6 @@ const ProjectsPage = ({ setHighlight }) => {
 				{Object.keys(projectsData.categories).map(category => (
 					<ProjectsSection key={category} category={category} />
 				))}
-				<p className='last-updated'>
-					Last updated: {projectsData.metadata?.lastUpdated || 'N/A'}
-				</p>
 			</div>
 		</div>
 	);
