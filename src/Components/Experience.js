@@ -160,7 +160,7 @@ const ExperiencePage = ({ setHighlight }) => {
         </div>
         <div className="eight columns main-col">
           <div className="experience-content">
-            {experienceData.categories.production.items.map((exp) => (
+            {(experienceData?.categories?.production?.items || []).map((exp) => (
               <ExperienceItem
                 key={exp.id}
                 experience={exp}

@@ -115,7 +115,7 @@ const ProjectsPage = ({ setHighlight }) => {
 	return (
 		<div ref={pageRef} className='row' id={pageId}>
 			<div className='twelve columns collapsed'>
-				{Object.keys(projectsData.categories).map(category => (
+				{Object.keys(projectsData?.categories || {}).map(category => (
 					<ProjectsSection key={category} category={category} />
 				))}
 			</div>

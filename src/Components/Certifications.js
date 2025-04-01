@@ -115,7 +115,8 @@ const CertificationsPage = ({ setHighlight }) => {
 	}, [isPageOnScreen, setHighlight]);
 
 	const productionCertifications = useMemo(
-		() => certificationsData.categories.production.items.map((certification) => (
+		() => 
+			(certificationsData?.categories?.production?.items || []).map((certification) => (
 			<CertificationItem 
 				key={`certification-${certification.id}`}
 				certification={certification} 

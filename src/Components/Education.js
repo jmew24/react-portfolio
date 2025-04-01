@@ -64,7 +64,7 @@ const EducationPage = ({ setHighlight }) => {
 				</div>
 				<div className="eight columns main-col">
 					<div className="education-content">
-						{educationData.items.map((education) => (
+						{(educationData?.items || []).map((education) => (
 							<EducationItem key={education.id} education={education} />
 						))}
 					</div>

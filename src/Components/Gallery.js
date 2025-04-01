@@ -99,7 +99,7 @@ const GalleryPage = ({ setHighlight }) => {
 	return (
 		<div ref={pageRef} className='row' id={pageId}>
 			<div className='twelve columns collapsed'>
-				{Object.keys(galleryData.categories).map(category => (
+				{Object.keys(galleryData?.categories || {}).map(category => (
 					<GallerySection key={category} category={category} />
 				))}
 			</div>
