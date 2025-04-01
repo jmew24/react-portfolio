@@ -8,46 +8,41 @@ import 'yet-another-react-lightbox/styles.css';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const LightBox = memo(({ id = 'lightBox-ID', source = 'none', title = '', images = [] }) => {
-	const [state, setState] = useState({
-		isOpen: false,
-		photoIndex: 0,
-		isLoading: true,
-		error: null
-	});
-	
+	const [isOpen, setIsOpen] = useState(false);
+	const [photoIndex, setPhotoIndex] = useState(0);
+	const [isLoading, setIsLoading] = useState(true);
+	const [error, setError] = useState(null);
+
 	const isMounted = useRef(false);
 	const curId = useRef('');
 
 	const handleIdChange = useCallback((event) => {
-		if (!state.isOpen) {
+		if (!isOpen) {
 			if (curId.current === '') {
 				const newId = event.detail.id();
 				if (newId === `${source}-${id}`) {
 					curId.current = newId;
-					setState(prev => ({ ...prev, isOpen: true }));
+					setIsOpen(true);
 				}
 			} else {
 				curId.current = '';
 			}
 		}
-	}, [state.isOpen, source, id]);
+	}, [isOpen, source, id]);
 
 	const handleClose = useCallback(() => {
 		if (isMounted.current) {
-			setState(prev => ({ ...prev, isOpen: false }));
+			setIsOpen(false);
 		}
 	}, []);
 
 	const handleImageLoad = useCallback(() => {
-		setState(prev => ({ ...prev, isLoading: false }));
+		setIsLoading(false);
 	}, []);
 
 	const handleImageError = useCallback(() => {
-		setState(prev => ({ 
-			...prev, 
-			isLoading: false,
-			error: 'Failed to load image'
-		}));
+		setIsLoading(false);
+		setError('Failed to load image');
 	}, []);
 
 	useEffect(() => {
@@ -64,11 +59,11 @@ const LightBox = memo(({ id = 'lightBox-ID', source = 'none', title = '', images
 
 	useEffect(() => {
 		if (!isMounted.current) return;
-		if (!state.isOpen) {
+		if (!isOpen) {
 			curId.current = '';
 			window.dispatchEvent(new Event('nav-reset'));
 		}
-	}, [state.isOpen]);
+	}, [isOpen]);
 
 	const slides = images.map(img => ({
 		src: img.src,
@@ -81,7 +76,7 @@ const LightBox = memo(({ id = 'lightBox-ID', source = 'none', title = '', images
 	return (
 		<div
 			className='item-wrap clickable'
-			onClick={() => setState(prev => ({ ...prev, isOpen: true }))}
+			onClick={() => setIsOpen(true)}
 			role="button"
 			tabIndex={0}
 			aria-label={`View gallery: ${title}`}
@@ -105,15 +100,24 @@ const LightBox = memo(({ id = 'lightBox-ID', source = 'none', title = '', images
 			</div>
 
 			<Lightbox
-				open={state.isOpen}
+				open={isOpen}
 				close={handleClose}
-				index={state.photoIndex}
+				index={photoIndex}
 				slides={slides}
-				plugins={[Counter]}
+				plugins={[
+					Counter
+				]}
 				carousel={{ finite: false }}
 				controller={{ closeOnBackdropClick: true }}
 				toolbar={{ buttons: ['close'] }}
 				animation={{ fade: 0 }}
+				on={{
+					view: ({ index: currentIndex }) => {
+						if (photoIndex !== currentIndex) {
+							setPhotoIndex(currentIndex);
+						}
+					},
+				}}
 				styles={{
 					container: { backgroundColor: 'rgba(0, 0, 0, .95)' },
 					button: { filter: 'none' },
@@ -121,8 +125,8 @@ const LightBox = memo(({ id = 'lightBox-ID', source = 'none', title = '', images
 					buttonNext: { right: 20 }
 				}}
 			/>
-			{state.isLoading && <div className="loading-spinner" />}
-			{state.error && <div className="error-message">{state.error}</div>}
+			{isLoading && <div className="loading-spinner" />}
+			{error && <div className="error-message">{error}</div>}
 		</div>
 	);
 });
