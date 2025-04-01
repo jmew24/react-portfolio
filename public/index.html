@@ -2,31 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=5">
     <meta name="theme-color" content="#000000">
+    <meta name="description" content="James Wilson - Professional Portfolio">
+    <meta name="keywords" content="James Wilson, portfolio, professional, developer">
+    <meta name="author" content="James Wilson">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jmew.ca/">
+    <meta property="og:title" content="James Wilson - Professional Portfolio">
+    <meta property="og:description" content="Professional portfolio showcasing my work and experience">
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jmew.ca/">
+    <meta property="twitter:title" content="James Wilson - Professional Portfolio">
+    <meta property="twitter:description" content="Professional portfolio showcasing my work and experience">
+    <meta property="twitter:image" content="%PUBLIC_URL%/og-image.jpg">
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://ajax.googleapis.com">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="/css/default.css">
     <link rel="stylesheet" href="/css/layout.css">
     <link rel="stylesheet" href="/css/media-queries.css">
-    <link rel="stylesheet" href="/css/image-gallery.scss" />
+    <link rel="stylesheet" href="/css/image-gallery.scss">
 
-
-    <title>James Wilson</title>
+    <title>James Wilson | Professional Portfolio</title>
   </head>
 
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root"></div>
+    <div id="root" role="main"></div>
 
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-   <script>window.jQuery || document.write('<script src="/js/jquery-3.6.0.min.js"><\/script>')</script>
-
-   <script src="/js/jquery.flexslider.js"></script>
-   <script src="/js/jquery.fittext.js"></script>
-   <script src="/js/init.js"></script>
-
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+    <script>
+      window.jQuery || document.write('<script src="/js/jquery-3.6.0.min.js" defer><\/script>')
+    </script>
+    <script src="/js/jquery.flexslider.js" defer></script>
+    <script src="/js/jquery.fittext.js" defer></script>
+    <script src="/js/init.js" defer></script>
   </body>
 </html>

@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "lastUpdated": "2025",
+    "version": "1.0"
+  },
+  "categories": {
+    "production": {
+      "title": "Production Certifications",
+      "description": "Professional certifications related to production and broadcasting",
+      "items": [
+        {
+          "id": "chyron-hego",
+          "displayTitle": "ChyronHego",
+          "title": "ChyronHego",
+          "companyUrl": "https://chyronhego.com/",
+          "certificationUrl": "/certifications/prime_badges.pdf",
+          "badges": [
+            {
+              "id": "prime-blue-belt",
+              "title": "PRIME Blue Belt",
+              "image": "Certification_38615.png",
+              "date": "2024",
+              "level": "Advanced"
+            },
+            {
+              "id": "prime-green-belt",
+              "title": "PRIME Green Belt",
+              "image": "Certification_38442.png",
+              "date": "2023",
+              "level": "Intermediate"
+            },
+            {
+              "id": "prime-yellow-belt",
+              "title": "PRIME Yellow Belt",
+              "image": "Certification_38358.png",
+              "date": "2023",
+              "level": "Intermediate"
+            },
+            {
+              "id": "chyronhego-white-belt",
+              "title": "CHYRONHEGO White Belt",
+              "image": "Certification_38422.png",
+              "date": "2023",
+              "level": "Beginner"
+            }
+          ]
+        }
+      ]
+    },
+    "coding": {
+      "title": "Coding Certifications",
+      "description": "Professional certifications related to software development",
+      "items": []
+    }
+  }
+} 

@@ -1,113 +1,141 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback, memo } from 'react';
+import PropTypes from 'prop-types';
+import Lightbox from 'yet-another-react-lightbox';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Counter from "yet-another-react-lightbox/plugins/counter";
+import "yet-another-react-lightbox/plugins/counter.css";
+import 'yet-another-react-lightbox/styles.css';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
-import Lightbox from 'react-image-lightbox';
-import '../lightbox.css';
-
-const LightBox = (props) => {
+const LightBox = memo(({ id = 'lightBox-ID', source = 'none', title = '', images = [] }) => {
 	const [state, setState] = useState({
-		id: props.id ? props.id : 'lightBox-ID',
-		source: props.source ? props.source : 'none',
 		isOpen: false,
 		photoIndex: 0,
-		images: props.images ? props.images : [],
+		isLoading: true,
+		error: null
 	});
-	const curImage = state.images[state.photoIndex];
-	let _isMounted = useRef(false);
-	let _curId = useRef('');
+	
+	const isMounted = useRef(false);
+	const curId = useRef('');
 
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	const handleIdChange = (event) => {
+	const handleIdChange = useCallback((event) => {
 		if (!state.isOpen) {
-			if (_curId.current === '') {
-				const curId = event.detail.id();
-				if (curId === `${state.source}-${state.id}`) {
-					_curId.current = curId;
-					setState((prevState) => ({
-						...prevState,
-						isOpen: true,
-					}));
+			if (curId.current === '') {
+				const newId = event.detail.id();
+				if (newId === `${source}-${id}`) {
+					curId.current = newId;
+					setState(prev => ({ ...prev, isOpen: true }));
 				}
 			} else {
-				_curId.current = '';
+				curId.current = '';
 			}
 		}
-	};
+	}, [state.isOpen, source, id]);
+
+	const handleClose = useCallback(() => {
+		if (isMounted.current) {
+			setState(prev => ({ ...prev, isOpen: false }));
+		}
+	}, []);
+
+	const handleImageLoad = useCallback(() => {
+		setState(prev => ({ ...prev, isLoading: false }));
+	}, []);
+
+	const handleImageError = useCallback(() => {
+		setState(prev => ({ 
+			...prev, 
+			isLoading: false,
+			error: 'Failed to load image'
+		}));
+	}, []);
 
 	useEffect(() => {
-		_isMounted.current = true;
-
+		isMounted.current = true;
 		return () => {
-			_isMounted.current = false;
+			isMounted.current = false;
 		};
 	}, []);
 
 	useEffect(() => {
 		window.addEventListener('id_change', handleIdChange);
-
-		return () => {
-			window.removeEventListener('id_change', handleIdChange);
-		};
+		return () => window.removeEventListener('id_change', handleIdChange);
 	}, [handleIdChange]);
 
 	useEffect(() => {
-		if (!_isMounted.current) return;
-
+		if (!isMounted.current) return;
 		if (!state.isOpen) {
-			_curId.current = '';
+			curId.current = '';
 			window.dispatchEvent(new Event('nav-reset'));
 		}
 	}, [state.isOpen]);
 
+	const slides = images.map(img => ({
+		src: img.src,
+		alt: img.alt || title,
+		description: img.description
+	}));
+
+	if (!images.length) return null;
+
 	return (
 		<div
 			className='item-wrap clickable'
-			onClick={() =>
-				setState((prevState) => ({
-					...prevState,
-					isOpen: true,
-				}))
-			}
+			onClick={() => setState(prev => ({ ...prev, isOpen: true }))}
+			role="button"
+			tabIndex={0}
+			aria-label={`View gallery: ${title}`}
 		>
-			<img alt={props.title ? props.title : ''} src={state.images[0].src} />{' '}
+			<LazyLoadImage
+				alt={title}
+				src={images[0].src}
+				className="gallery-image"
+				effect="blur"
+				onLoad={handleImageLoad}
+				onError={handleImageError}
+			/>
 			<div className='overlay'>
 				<div className='gallery-item-meta'>
-					<h5>{props.title}</h5>
-					<p>Click to view photo gallery</p>
+					<h5>{title}</h5>
+					{images[0].description && <p>{images[0].description}</p>}
 				</div>
 			</div>
-			{state.isOpen && (
-				<Lightbox
-					enableZoom={false}
-					imageTitle={props.title ? props.title : ''}
-					imageCaption={curImage.description ? curImage.description : ''}
-					mainSrc={curImage.src}
-					nextSrc={state.images[(state.photoIndex + 1) % state.images.length].src}
-					prevSrc={state.images[(state.photoIndex + state.images.length - 1) % state.images.length].src}
-					onCloseRequest={() =>
-						_isMounted.current &&
-						setState((prevState) => ({
-							...prevState,
-							isOpen: false,
-						}))
-					}
-					onMovePrevRequest={() =>
-						_isMounted.current &&
-						setState((prevState) => ({
-							...prevState,
-							photoIndex: (state.photoIndex + state.images.length - 1) % state.images.length,
-						}))
-					}
-					onMoveNextRequest={() =>
-						_isMounted.current &&
-						setState((prevState) => ({
-							...prevState,
-							photoIndex: (state.photoIndex + 1) % state.images.length,
-						}))
-					}
-				/>
-			)}
+			<div className='link-icon'>
+				<i className='fa fa-plus'></i>
+			</div>
+
+			<Lightbox
+				open={state.isOpen}
+				close={handleClose}
+				index={state.photoIndex}
+				slides={slides}
+				plugins={[Counter]}
+				carousel={{ finite: false }}
+				controller={{ closeOnBackdropClick: true }}
+				toolbar={{ buttons: ['close'] }}
+				animation={{ fade: 0 }}
+				styles={{
+					container: { backgroundColor: 'rgba(0, 0, 0, .95)' },
+					button: { filter: 'none' },
+					buttonPrev: { left: 20 },
+					buttonNext: { right: 20 }
+				}}
+			/>
+			{state.isLoading && <div className="loading-spinner" />}
+			{state.error && <div className="error-message">{state.error}</div>}
 		</div>
 	);
+});
+
+LightBox.propTypes = {
+	id: PropTypes.string,
+	source: PropTypes.string,
+	title: PropTypes.string,
+	images: PropTypes.arrayOf(PropTypes.shape({
+		src: PropTypes.string.isRequired,
+		alt: PropTypes.string,
+		description: PropTypes.string,
+	})),
 };
 
 export default LightBox;
