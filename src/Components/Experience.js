@@ -75,7 +75,10 @@ const ExperienceItem = ({ experience, category = 'production' }) => {
       <div className="experience-content">
         {experience.roles?.map((role, index) => (
           <div key={`${experience.id}-role-${index}`} className="role-item">
-            <h4>{role.title}</h4>
+            <h4>
+              {role.title}
+              {role.when && <span className="role-date">{role.when}</span>}
+            </h4>
             <p>{role.description}</p>
           </div>
         ))}
