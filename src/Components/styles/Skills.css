@@ -49,50 +49,74 @@
   padding: 0.8em 1em;
   border-radius: 3px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   position: relative;
   overflow: hidden;
 }
 
-.language-bar::before {
+.language-bar::after {
   content: '';
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
   bottom: 0;
-  width: 4px;
+  height: 100%;
+  z-index: 0;
+  border-radius: 3px 0 0 3px;
 }
 
-.language-bar[data-level="Advanced"]::before {
+.language-bar[data-level="Advanced"]::after {
   background-color: #11ABB0;
+  width: 90%;
 }
 
-.language-bar[data-level="Intermediate"]::before {
+.language-bar[data-level="Intermediate"]::after {
   background-color: #F06000;
+  width: 65%;
 }
 
-.language-bar[data-level="Beginner"]::before {
+.language-bar[data-level="Beginner"]::after {
   background-color: #838C95;
+  width: 30%;
+}
+
+.language-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.3em 0.6em;
+  border-radius: 3px;
 }
 
 .language-name {
   color: #FFFFFF;
-  font: 16px/24px 'opensans-regular', sans-serif;
+  font: 18px/24px 'opensans-bold', sans-serif;
+  position: relative;
+  z-index: 1;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+  margin-bottom: 0;
 }
 
-.language-name a {
+.language-name a,
+.language-name a:visited {
   color: #FFFFFF;
   text-decoration: none;
 }
 
 .language-name a:hover {
-  color: #11ABB0;
+  color: #FFFFFF;
+  text-decoration: underline;
 }
 
 .language-level {
-  color: #95A3A3;
-  font: 14px/20px 'opensans-regular', sans-serif;
+  color: #FFFFFF;
+  font: 12px/16px 'opensans-light', sans-serif;
+  position: relative;
+  z-index: 1;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
 }
 
 .skills h1 {
@@ -203,6 +227,7 @@
   margin-bottom: 0;
   display: inline-block;
   position: relative;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
 }
 
 #skills .header-col h1 span {

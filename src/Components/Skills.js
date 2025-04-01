@@ -23,8 +23,10 @@ const LanguageItem = ({ language }) => {
 				className="language-bar"
 				data-level={language.experience}
 			>
-				<span className="language-name" dangerouslySetInnerHTML={{ __html: language.name }} />
-				<span className="language-level">{language.experience}</span>
+				<div className="language-text-wrapper">
+					<span className="language-name" dangerouslySetInnerHTML={{ __html: language.name }} />
+					<span className="language-level">Level: {language.experience}</span>
+				</div>
 			</div>
 		</div>
 	);
