@@ -50,17 +50,56 @@
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-.certification-item .badge-title a,
-.certification-item .title a {
+.certification-item h3.certification-title a,
+.certification-item h3.certification-title a:link,
+.certification-item h3.certification-title a:visited {
+  color: #11ABB0;
+  text-decoration: none !important;
+  border: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  transition: color 0.3s ease;
+}
+
+.certification-item h3.certification-title a:hover,
+.certification-item h3.certification-title a:active,
+.certification-item h3.certification-title a:focus {
   color: #FFFFFF;
-  text-decoration: none;
+  text-decoration: none !important;
+  border: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+.certification-item h3.certification-title a::before,
+.certification-item h3.certification-title a::after {
+    content: none !important;
+    display: none !important;
+}
+
+.certification-item h3.certification-title {
+  border: none !important;
+  text-decoration: none !important;
+  background: none !important;
+}
+
+.certification-item .badge-title a,
+.certification-item .title a,
+.certification-item a.company-link {
+  color: #FFFFFF;
+  text-decoration: none !important;
   transition: all 0.3s ease;
 }
 
 .certification-item .badge-title a:hover,
-.certification-item .title a:hover {
+.certification-item .title a:hover,
+.certification-item a.company-link:hover {
   color: #11ABB0;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .certification-item .date,

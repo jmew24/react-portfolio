@@ -32,11 +32,54 @@
 }
 
 #resume .header-col {
-  padding-top: 9px;
+  /* Handled by global .header-col */
 }
 
 #resume .main-col {
-  padding-right: 10%;
+  /* Handled by global .main-col */
+}
+
+/* Combined .education styles */
+#resume .education {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  padding-bottom: 1.5em;
+  border-bottom: 0.0625em solid #333333;
+}
+
+#resume .education h1 {
+  /* Inherits #resume h1 */
+  text-align: left; /* From layout.css */
+  margin-bottom: 30px; /* From layout.css */
+}
+
+#resume .education h1 span {
+  /* Inherits #resume h1 span */
+}
+
+#resume .education h3 {
+  /* Inherits #resume h3 */
+  color: #fff; /* From layout.css */
+  margin-bottom: 10px; /* From layout.css */
+}
+
+#resume .education .info {
+  /* Inherits global .info */
+}
+
+#resume .education .info span {
+  /* Inherits global .info span */
+}
+
+#resume .education .date {
+ /* Inherits global .date */
+}
+
+/* Added from layout.css */
+#resume .education .description {
+	color: #E0E0E0;
+	margin: 12px 0;
+	font: 15px/24px 'opensans-regular', sans-serif;
 }
 
 .education,
@@ -62,11 +105,4 @@
 #resume .date {
   color: #B0C4DE;
   font-style: italic;
-}
-
-.education {
-  margin-top: 3em;
-  margin-bottom: 3em;
-  padding-bottom: 1.5em;
-  border-bottom: 0.0625em solid #333333;
 }

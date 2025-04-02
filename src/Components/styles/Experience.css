@@ -10,6 +10,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #fff;
+  margin-bottom: 30px;
 }
 
 .experience h1 span {
@@ -30,82 +31,64 @@
   left: 0;
 }
 
-.category-description {
-  color: #FFFFFF;
-  font-size: 16px;
-  line-height: 24px;
-  margin-top: 12px;
-  font-weight: 400;
-}
-
 .experience-item {
   margin-bottom: 48px;
-  border-bottom: 1px solid #333333;
   padding-bottom: 24px;
+  border-bottom: 1px solid #333333;
 }
 
 .experience-item:last-child {
   border-bottom: none;
+  padding-bottom: 0;
 }
 
-.experience-header h3 {
-  font: 25px/30px 'opensans-bold', sans-serif;
-  margin-bottom: 6px;
-  color: #fff;
-}
-
-.experience-header h3 a {
+.company-name {
   color: #11ABB0;
-  text-decoration: none;
+  font: 28px/34px 'opensans-bold', sans-serif;
+  margin-bottom: 6px;
 }
 
-.experience-header h3 a:hover {
-  color: #fff;
-}
-
-.experience-header .info {
+.company-info {
+  color: #FFFFFF;
   font: 16px/24px 'librebaskerville-italic', serif;
-  color: #FFFFFF;
   margin-bottom: 18px;
-  margin-top: 9px;
-  font-weight: 400;
 }
 
-.experience-header .info .date {
-  font: 14px/20px 'opensans-regular', sans-serif;
+.company-info .bullet {
+  margin: 0 6px;
 }
 
-.experience-header .info .separator {
-  margin: 0 10px;
-}
-
-.experience-content {
-  line-height: 1.75em;
-  color: #FFFFFF;
-  font-weight: 400;
+.company-info .date {
+  color: #B0C4DE;
 }
 
 .role-item {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+}
+
+.role-item:last-child {
+  margin-bottom: 0;
 }
 
 .role-item h4 {
-  font: 16px/24px 'opensans-bold', sans-serif;
-  color: #fff;
-  margin-bottom: 6px;
+  color: #FFFFFF;
+  font: 20px/30px 'opensans-bold', sans-serif;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: baseline;
 }
 
 .role-item .role-date {
-  font: 14px/20px 'opensans-regular', sans-serif;
+  font: 16px/24px 'opensans-regular', sans-serif;
   color: #B0C4DE;
-  margin-left: 10px;
+  margin-left: 12px;
   font-style: italic;
 }
 
 .role-item p {
   color: #FFFFFF;
-  margin-bottom: 12px;
-  font-weight: 400;
+  font: 16px/24px 'opensans-regular', sans-serif;
+  margin: 0;
 }
 
 .technologies {
