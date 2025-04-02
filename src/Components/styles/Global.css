@@ -11,6 +11,9 @@ html,
 
 section {
   background: #1a1a1a;
+  padding-top: 90px;
+  padding-bottom: 72px;
+  overflow: hidden;
 }
 
 /* Update link colors for better visibility */
@@ -23,9 +26,52 @@ a:hover {
   color: #FFFFFF;
 }
 
+/* Global link style override for main sections if needed */
+section a,
+section a:visited {
+  color: #11ABB0;
+}
+
+section a:hover,
+section a:focus {
+  color: #fff;
+}
+
 .category-description {
   color: rgb(255, 255, 255);
   font: 16px/24px 'opensans-light', sans-serif;
   margin-top: 12px;
   font-weight: 400;
+}
+
+/* General Main Section Styles (from layout.css) */
+.main-col {
+  padding-right: 10%;
+}
+
+.header-col {
+  padding-top: 9px;
+}
+
+/* Common info style */
+.info {
+  font: 16px/24px 'librebaskerville-italic', serif;
+  color: #E0E0E0;
+  /* Use consistent color from layout.css */
+  margin-bottom: 18px;
+  margin-top: 9px;
+}
+
+.info span {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.date {
+  font: 15px/24px 'opensans-regular', sans-serif;
+  margin-top: 6px;
+  color: #B0C4DE;
+  /* Keep existing color */
+  font-style: italic;
+  /* Keep existing style */
 }
