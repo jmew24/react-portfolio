@@ -25,7 +25,6 @@ const NAVIGATION = ['home', 'about', 'experience', 'certifications', 'skills', '
 
 const AppPage = () => {
 	const [highlight, setHighlight] = React.useState('home');
-	const [isScrolling, setIsScrolling] = React.useState(false);
 
 	// Initialize Google Analytics
 	useEffect(() => {
