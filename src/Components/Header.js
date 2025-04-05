@@ -20,7 +20,7 @@ const navigationItems = [
 
 const HeaderPage = ({ setHighlight }) => {
 	const pageRef = useRef(null);
-	const isPageOnScreen = useOnScreen(pageRef, 0.2);
+	const isPageOnScreen = useOnScreen(pageRef, 0.05);
 
 	useEffect(() => {
 		if (isPageOnScreen) {

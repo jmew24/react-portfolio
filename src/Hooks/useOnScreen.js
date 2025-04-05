@@ -12,9 +12,9 @@ export const useOnScreen = (ref, threshold = 0.5) => {
 	// Memoize observer options to prevent unnecessary recreations
 	const observerOptions = useMemo(() => ({
 		root: null,
-		rootMargin: '-20% 0px -20% 0px',
-		threshold,
-	}), [threshold]);
+		rootMargin: '0px',
+		threshold: [0, 0.25, 0.3, 0.4, 0.5], // Lower thresholds for better detection
+	}), []);
 
 	useEffect(() => {
 		if (!ref?.current) {
@@ -23,7 +23,19 @@ export const useOnScreen = (ref, threshold = 0.5) => {
 		}
 
 		const observer = new IntersectionObserver(
-			([entry]) => setIntersecting(entry.isIntersecting),
+			([entry]) => {
+				const targetHeight = entry.boundingClientRect.height;
+				const windowHeight = window.innerHeight;
+				const ratio = entry.intersectionRatio;
+				
+				// For shorter sections (less than 80% of viewport), use stricter thresholds
+				if (targetHeight < windowHeight * 0.8) {
+					setIntersecting(ratio > 0.4);
+				} else {
+					// For taller sections, use more lenient thresholds
+					setIntersecting(ratio > 0.25);
+				}
+			},
 			observerOptions
 		);
 
