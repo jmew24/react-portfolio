@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { social, main } from '../Data/General';
+import general from '../Data/general.json';
 import { SocialList } from '../Factories/SocialList';
 
 const FooterPage = () => {
@@ -9,12 +9,12 @@ const FooterPage = () => {
 			<div className='row'>
 				<div className='twelve columns'>
 					<ul className='social-links'>
-						<SocialList socials={social} />
+						<SocialList socials={general.social} />
 					</ul>
 
 					<ul className='copyright'>
 						<li>
-							&copy; Copyright {main.year} {main.name}
+							&copy; Copyright {general.main.year} {general.main.name}
 						</li>
 						<li>
 							Design by{' '}

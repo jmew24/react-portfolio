@@ -1,0 +1,183 @@
+.certifications {
+  background: #1a1a1a;
+  padding-top: 0.25em;
+  padding-bottom: 1.5em;
+  overflow: hidden;
+}
+
+.certifications h1 {
+  font: 18px/24px 'opensans-bold', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.certifications h2 {
+  font: 24px/32px 'opensans-bold', sans-serif;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.certifications .subtitle {
+  color: #FFFFFF;
+  font: 16px/24px 'opensans-regular', sans-serif;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.certification-item {
+  background: transparent;
+  padding: 25px 0;
+  border-left: 4px solid transparent;
+  padding-left: 20px;
+}
+
+.certification-item h3,
+.certification-item .badge-title,
+.certification-item .title {
+  color: #FFFFFF;
+  font: 22px/30px 'opensans-bold', sans-serif;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.certification-item h3.certification-title a,
+.certification-item h3.certification-title a:link,
+.certification-item h3.certification-title a:visited {
+  color: #11ABB0;
+  text-decoration: none !important;
+  border: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  transition: color 0.3s ease;
+}
+
+.certification-item h3.certification-title a:hover,
+.certification-item h3.certification-title a:active,
+.certification-item h3.certification-title a:focus {
+  color: #FFFFFF;
+  text-decoration: none !important;
+  border: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+.certification-item h3.certification-title a::before,
+.certification-item h3.certification-title a::after {
+    content: none !important;
+    display: none !important;
+}
+
+.certification-item h3.certification-title {
+  border: none !important;
+  text-decoration: none !important;
+  background: none !important;
+}
+
+.certification-item .badge-title a,
+.certification-item .title a,
+.certification-item a.company-link {
+  color: #FFFFFF;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+
+.certification-item .badge-title a:hover,
+.certification-item .title a:hover,
+.certification-item a.company-link:hover {
+  color: #11ABB0;
+  text-decoration: none !important;
+}
+
+.certification-item .date,
+.certification-item .badge-date {
+  color: #B0C4DE;
+  font: 16px/24px 'opensans-semibold', sans-serif;
+  margin-bottom: 15px;
+  display: block;
+  letter-spacing: 0.3px;
+}
+
+.certification-item .date span,
+.certification-item .badge-date span {
+  color: #E0E0E0;
+  font-style: italic;
+}
+
+.certification-item .level {
+  color: #E0E0E0;
+  font: 16px/24px 'opensans-regular', sans-serif;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.certification-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.certification-item .description {
+  color: #FFFFFF;
+  font: 15px/22px 'opensans-regular', sans-serif;
+  margin-bottom: 15px;
+  letter-spacing: 0.3px;
+}
+
+.certification-item .view-link {
+  display: inline-block;
+  color: #11ABB0;
+  font: 14px/20px 'opensans-bold', sans-serif;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.certification-item .view-link:hover {
+  color: #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.certification-item a {
+  color: #11ABB0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.certification-item a:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* Belt colors */
+.certification-item.blue-belt {
+  border-left: 4px solid #11ABB0;
+}
+
+.certification-item.green-belt {
+  border-left: 4px solid #4CAF50;
+}
+
+.certification-item.yellow-belt {
+  border-left: 4px solid #FFC107;
+}
+
+.certification-item.white-belt {
+  border-left: 4px solid #E0E0E0;
+}

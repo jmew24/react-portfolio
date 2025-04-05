@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "version": "1.0"
+  },
+  "categories": {
+    "production": {
+      "title": "Production Projects",
+      "description": "Projects related to broadcasting and media production",
+      "items": []
+    },
+    "coding": {
+      "title": "Software Development Projects",
+      "description": "Software development and engineering projects",
+      "items": [
+        {
+          "id": "hyperdeck-ui",
+          "title": "HyperDeck UI",
+          "description": "A Python based controller for the Blackmagic Design HyperDeck",
+          "images": [
+            {
+              "file": "hyperdeck-controller.jpg",
+              "description": "HyperDeck UI Interface"
+            }
+          ],
+          "url": "https://github.com/jmew24/blackmagic-hyperdeck-ui"
+        },
+        {
+          "id": "convocation-controller",
+          "title": "Convocation Controller",
+          "description": "A React based Xpression controller for convocation ceremony name readings",
+          "images": [
+            {
+              "file": "convocation-controller.jpg",
+              "description": "Convocation Controller Interface"
+            }
+          ],
+          "url": "https://github.com/ReadySetLinq/convocation-controller/tree/dev"
+        },
+        {
+          "id": "portfolio-website",
+          "title": "Portfolio Website",
+          "description": "A React based portfolio website template",
+          "images": [
+            {
+              "file": "portfolio-website.jpg",
+              "description": "Portfolio Website Screenshot"
+            }
+          ],
+          "url": "https://github.com/jmew24/react-portfolio"
+        }
+      ]
+    }
+  }
+} 

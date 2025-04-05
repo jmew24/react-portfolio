@@ -93,7 +93,7 @@ jQuery(document).ready(function ($) {
 		const y = $(window).scrollTop();
 		const nav = $('nav');
 
-		if (y > h * 0.2 && y + 40 < h && $(window).outerWidth() > 768) {
+		if (y > h * 0.2 && y < h * 0.95 && $(window).outerWidth() > 768) {
 			nav.fadeOut('fast');
 		} else {
 			if (y < h * 0.2) {

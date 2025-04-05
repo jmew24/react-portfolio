@@ -1,13 +1,73 @@
 import React, { useRef, useEffect, useMemo } from 'react';
-
-import skills from '../Data/Skills';
+import PropTypes from 'prop-types';
+import { skills as skillsData } from '../Data';
 import { useOnScreen } from '../Hooks/useOnScreen';
+import './styles/Skills.css';
 
 const pageId = 'skills';
 
-const SkillsPage = ({ setHighlight }) => {
+const SkillItem = ({ skill }) => (
+	<li className="skill-item">
+		<p className="skill-description">{skill}</p>
+	</li>
+);
+
+SkillItem.propTypes = {
+	skill: PropTypes.string.isRequired
+};
+
+const LanguageItem = ({ language }) => {
+	return (
+		<div className="language-bar-wrapper">
+			<div
+				className="language-bar"
+				data-level={language.experience}
+			>
+				<div className="language-text-wrapper">
+					<span className="language-name" dangerouslySetInnerHTML={{ __html: language.name }} />
+					<span className="language-level">Level: {language.experience}</span>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+LanguageItem.propTypes = {
+	language: PropTypes.shape({
+		name: PropTypes.string.isRequired,
+		experience: PropTypes.string.isRequired,
+	}).isRequired,
+};
+
+const SkillSection = ({ title, description, children }) => (
+	<div className="skill-section">
+		<div className='header-col'>
+			<h1>
+				<span>{title}</span>
+			</h1>
+			{description && (
+				<p className="category-description">{description}</p>
+			)}
+		</div>
+		<div className='main-col'>
+			<div className='row item'>
+				<div className='skills'>
+					{children}
+				</div>
+			</div>
+		</div>
+	</div>
+);
+
+SkillSection.propTypes = {
+	title: PropTypes.string.isRequired,
+	description: PropTypes.string,
+	children: PropTypes.node.isRequired
+};
+
+const SkillsPage = React.memo(({ setHighlight }) => {
 	const pageRef = useRef();
-	const isPageOnScreen = useOnScreen(pageRef);
+	const isPageOnScreen = useOnScreen(pageRef, 0.2);
 
 	useEffect(() => {
 		if (isPageOnScreen) {
@@ -16,87 +76,101 @@ const SkillsPage = ({ setHighlight }) => {
 	}, [isPageOnScreen, setHighlight]);
 
 	const productionSkills = useMemo(
-		() =>
-			skills.production.list.map((skill, index) => {
-				return (
-					<li key={`${skill}`} id={`skill-production-${skill}`}>
-						{skill}
-					</li>
-				);
-			}),
-		[],
+		() => {
+			const list = skillsData?.categories?.production?.list || [];
+			return list.map((skill, index) => (
+				<SkillItem key={`production-${index}`} skill={skill} />
+			));
+		},
+		[]
 	);
 
 	const codingSkills = useMemo(
-		() =>
-			skills.coding.list.map((skill, index) => {
-				return (
-					<li key={`${skill}`} id={`skill-coding-${skill}`}>
-						{skill}
-					</li>
-				);
-			}),
-		[],
+		() => {
+			const list = skillsData?.categories?.coding?.list || [];
+			return list.map((skill, index) => (
+				<SkillItem key={`coding-${index}`} skill={skill} />
+			));
+		},
+		[]
 	);
 
+	const sortLanguages = (languages) => {
+		const levelOrder = {
+			'Advanced': 1,
+			'Intermediate': 2,
+			'Beginner': 3
+		};
+		
+		return [...languages].sort((a, b) => {
+			// First sort by experience level
+			const levelDiff = levelOrder[a.experience] - levelOrder[b.experience];
+			if (levelDiff !== 0) return levelDiff;
+			
+			// If same level, sort alphabetically by name (strip HTML tags for comparison)
+			const nameA = a.name.replace(/<[^>]+>/g, '').toLowerCase();
+			const nameB = b.name.replace(/<[^>]+>/g, '').toLowerCase();
+			return nameA.localeCompare(nameB);
+		});
+	};
+
 	const codingLanguages = useMemo(
-		() =>
-			skills.coding.languages.list.map((language, index) => {
+		() => {
+			const languages = skillsData?.categories?.coding?.languages?.list || [];
+			const sortedLanguages = sortLanguages(languages);
+			
+			return sortedLanguages.map((language, index) => {
+				// Ensure language is in the correct format
+				const languageObj = typeof language === 'object' ? language : {
+					name: String(language),
+					experience: 'Intermediate'
+				};
+				
 				return (
-					<em key={`${language}`} id={`languages-production-${language}`}>
-						{index > 0 ? <span>&bull;</span> : null} <span dangerouslySetInnerHTML={{ __html: language }}></span>{' '}
-					</em>
+					<LanguageItem 
+						key={`language-${index}`}
+						language={languageObj}
+					/>
 				);
-			}),
-		[],
+			});
+		},
+		[]
 	);
 
 	return (
-		<section ref={pageRef} id={pageId}>
-			<div className='row skill'>
-				<div className='four columns header-col'>
-					<h1>
-						<span>{skills.production.title}</span>
-					</h1>
-				</div>
+		<section ref={pageRef} id={pageId} aria-label="Skills Section">
+			<div className="row skill">
+				<SkillSection 
+					title={skillsData?.categories?.production?.title || 'Production Skills'}
+					description={skillsData?.categories?.production?.description}
+				>
+					<ul className="skills-list">{productionSkills}</ul>
+				</SkillSection>
 
-				<div className='eight columns main-col'>
-					<div className='row skill'>
-						<div className='skills'>
-							<ul>{productionSkills}</ul>
-						</div>
+				<SkillSection 
+					title={skillsData?.categories?.coding?.title || 'Programming Skills'}
+					description={skillsData?.categories?.coding?.description}
+				>
+					<ul className="skills-list">{codingSkills}</ul>
+				</SkillSection>
+
+				<SkillSection 
+					title={skillsData?.categories?.coding?.languages?.title || 'Programming Languages'}
+					description={skillsData?.categories?.coding?.languages?.description}
+				>
+					<div className="languages-list">
+						{codingLanguages}
 					</div>
-				</div>
-
-				<div className='four columns header-col'>
-					<h1>
-						<span>{skills.coding.title}</span>
-					</h1>
-				</div>
-
-				<div className='eight columns main-col'>
-					<div className='row item'>
-						<div className='skills'>
-							<ul>{codingSkills}</ul>
-						</div>
-					</div>
-				</div>
-
-				<div className='four columns header-col'>
-					<h1>
-						<span>{skills.coding.languages.title}</span>
-					</h1>
-				</div>
-
-				<div className='eight columns main-col'>
-					<div className='row item'>
-						<p className='skills'>{codingLanguages}</p>
-					</div>
-				</div>
+				</SkillSection>
 			</div>
-			<br />
 		</section>
 	);
+});
+
+SkillsPage.propTypes = {
+	setHighlight: PropTypes.func.isRequired
 };
+
+SkillsPage.displayName = 'SkillsPage';
 
 export default SkillsPage;

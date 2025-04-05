@@ -1,0 +1,174 @@
+/* App.css - Global Styles */
+
+/* General Styles */
+body {
+  background: #0f0f0f;
+}
+
+html,
+#root {
+  background: #0f0f0f;
+  min-height: 100%;
+}
+
+section {
+  background: #1a1a1a;
+}
+
+/* Global Link Styles */
+a {
+  color: #11ABB0;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #FFFFFF;
+}
+
+/* Global Animation Keyframes */
+@-moz-keyframes photoshop {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 60%;
+  }
+}
+
+@-moz-keyframes illustrator {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 55%;
+  }
+}
+
+@-moz-keyframes wordpress {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 50%;
+  }
+}
+
+@-moz-keyframes css {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 90%;
+  }
+}
+
+@-moz-keyframes html5 {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
+
+@-moz-keyframes jquery {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 50%;
+  }
+}
+
+@-webkit-keyframes photoshop {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 60%;
+  }
+}
+
+@-webkit-keyframes illustrator {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 55%;
+  }
+}
+
+@-webkit-keyframes wordpress {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 50%;
+  }
+}
+
+@-webkit-keyframes css {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 90%;
+  }
+}
+
+@-webkit-keyframes html5 {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
+
+@-webkit-keyframes jquery {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 50%;
+  }
+}
+
+/* Global Date Styles */
+.date {
+  color: #B0C4DE;
+  font-style: italic;
+}
+
+/* Global Section Styles */
+.section-title {
+  font: 18px/24px 'opensans-bold', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+/* Global Media Queries */
+@media only screen and (max-width: 767px) {
+  section {
+    padding: 1.5em 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  section {
+    padding: 1em 0;
+  }
+}
