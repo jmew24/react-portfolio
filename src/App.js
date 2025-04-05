@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, Suspense } from 'react';
+import React, { useEffect, useMemo, Suspense, useCallback } from 'react';
 import ReactGA from 'react-ga';
 import { HelmetProvider } from 'react-helmet-async';
 import 'react-lazy-load-image-component/src/effects/blur.css';
@@ -25,11 +25,47 @@ const NAVIGATION = ['home', 'about', 'experience', 'certifications', 'skills', '
 
 const AppPage = () => {
 	const [highlight, setHighlight] = React.useState('home');
+	const [isScrolling, setIsScrolling] = React.useState(false);
 
 	// Initialize Google Analytics
 	useEffect(() => {
 		ReactGA.initialize('UA-110570651-1');
 		ReactGA.pageview(window.location.pathname);
+	}, []);
+
+	// Handle scroll position for navigation highlighting
+	useEffect(() => {
+		let scrollTimeout;
+
+		const handleScroll = () => {
+			setIsScrolling(true);
+			clearTimeout(scrollTimeout);
+
+			// At the very top of the page
+			if (window.scrollY === 0) {
+				setHighlight('home');
+			}
+			// At the bottom of the page
+			else if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 2) {
+				setHighlight('gallery');
+			}
+
+			// Clear the scrolling flag after scrolling stops
+			scrollTimeout = setTimeout(() => {
+				setIsScrolling(false);
+			}, 150);
+		};
+
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+			clearTimeout(scrollTimeout);
+		};
+	}, []);
+
+	// Wrapper for setHighlight that handles both click and scroll updates
+	const handleSetHighlight = useCallback((section) => {
+		setHighlight(section);
 	}, []);
 
 	// Handle navigation highlighting
@@ -47,20 +83,20 @@ const AppPage = () => {
 	// Memoize the main content to prevent unnecessary re-renders
 	const mainContent = useMemo(() => (
 		<section className='main'>
-			<Experience setHighlight={setHighlight} />
-			<Certifications setHighlight={setHighlight} />
-			<Skills setHighlight={setHighlight} />
-			<Education setHighlight={setHighlight} />
+			<Experience setHighlight={handleSetHighlight} />
+			<Certifications setHighlight={handleSetHighlight} />
+			<Skills setHighlight={handleSetHighlight} />
+			<Education setHighlight={handleSetHighlight} />
 		</section>
-	), []);
+	), [handleSetHighlight]);
 
 	// Memoize the bottom section
 	const bottomContent = useMemo(() => (
 		<section className='bottom'>
-			<Gallery setHighlight={setHighlight} />
-			<Projects setHighlight={setHighlight} />
+			<Gallery setHighlight={handleSetHighlight} />
+			<Projects setHighlight={handleSetHighlight} />
 		</section>
-	), []);
+	), [handleSetHighlight]);
 
 	if (!Object.keys(resumeData).length) return null;
 
@@ -69,8 +105,8 @@ const AppPage = () => {
 			<HelmetProvider>
 				<ThemeProvider>
 					<div className='App'>
-						<Header setHighlight={setHighlight} />
-						<About setHighlight={setHighlight} />
+						<Header setHighlight={handleSetHighlight} />
+						<About setHighlight={handleSetHighlight} />
 						<Suspense fallback={<LoadingSkeleton type="text" count={3} />}>
 							{mainContent}
 						</Suspense>
