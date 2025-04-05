@@ -25,7 +25,6 @@ const NAVIGATION = ['home', 'about', 'experience', 'certifications', 'skills', '
 
 const AppPage = () => {
 	const [highlight, setHighlight] = React.useState('home');
-	const [isScrolling, setIsScrolling] = React.useState(false);
 
 	// Initialize Google Analytics
 	useEffect(() => {
@@ -35,11 +34,8 @@ const AppPage = () => {
 
 	// Handle scroll position for navigation highlighting
 	useEffect(() => {
-		let scrollTimeout;
 
 		const handleScroll = () => {
-			setIsScrolling(true);
-			clearTimeout(scrollTimeout);
 
 			// At the very top of the page
 			if (window.scrollY === 0) {
@@ -49,17 +45,11 @@ const AppPage = () => {
 			else if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 2) {
 				setHighlight('gallery');
 			}
-
-			// Clear the scrolling flag after scrolling stops
-			scrollTimeout = setTimeout(() => {
-				setIsScrolling(false);
-			}, 150);
 		};
 
 		window.addEventListener('scroll', handleScroll);
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
-			clearTimeout(scrollTimeout);
 		};
 	}, []);
 
